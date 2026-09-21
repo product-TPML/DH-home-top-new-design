@@ -29,7 +29,11 @@ The desktop view uses an explicit three-column editorial dashboard in `.desktop-
    - Premium header with the supplied premium icon PNG.
    - One featured Premium story.
    - Four compact Premium stories.
-   - Premium CTA at the bottom.
+   - Premium CTA anchored inside the bottom of the Premium rail.
+   - In the desktop With Ad view, the Premium rail keeps the shared rail height;
+     the featured-story timestamp has an explicit 18px separation before the
+     first compact-story separator, and every compact story has 16px from its
+     separator to its image.
 
 The desktop rails share the same top and bottom geometry. The wide desktop layout is bounded to fit a 1920 × 1080 first viewport using compact spacing, while shorter desktop screens fall back to natural page flow rather than clipping content.
 
@@ -81,7 +85,7 @@ The local static server is available at:
 
 `http://127.0.0.1:8002/`
 
-Use a cache-busting query string such as `?v=57` when previewing CSS or HTML changes.
+Use a cache-busting query string such as `?v=58` when previewing CSS or HTML changes.
 
 The project is now a local Git repository. The initial layout commit is:
 

@@ -1,4 +1,759 @@
 /* Final responsive layout rules loaded after the legacy prototype rules. */
+
+@media(min-width:1051px){
+  /* One spacing token for the entire With Ad Premium block. */
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    --premium-gap:12px;
+    display:flex!important;
+    flex-direction:column!important;
+    row-gap:var(--premium-gap)!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px var(--premium-gap)!important;
+    box-sizing:border-box!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading{
+    flex:0 0 58px!important;
+    width:calc(100% + 28px)!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature{
+    flex:0 0 auto!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:var(--premium-gap)!important;
+    margin:0!important;
+    min-height:0!important;
+    justify-content:flex-start!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:10px!important;
+    flex:0 0 auto!important;
+    margin:0!important;
+    padding:0!important;
+    border-top:1px solid #dec06a!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
+}
+
+/* Authoritative With Ad premium layout.
+   This is intentionally last: older experiments above this point used
+   competing flex/grid rules and changed the separator position. */
+@media (min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    align-self:stretch!important;
+    position:relative!important;
+    box-sizing:border-box!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading.premium-heading{
+    flex:0 0 58px!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px 10px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:0!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:10px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:80px minmax(0,1fr)!important;
+    column-gap:8px!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:6px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story img{
+    display:block!important;
+    width:80px!important;
+    height:52px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story > div{
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story h3{
+    margin:2px 0!important;
+    font-size:15px!important;
+    line-height:1.08!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story p{
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story .story-meta{
+    margin-top:2px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(-n+4){
+    display:grid!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:10!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    row-gap:4px!important;
+    padding-bottom:12px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    flex:0 0 auto!important;
+    gap:8px!important;
+    margin:0!important;
+    justify-content:flex-start!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    padding:0!important;
+    margin:0!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    row-gap:8px!important;
+    padding-bottom:12px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    gap:8px!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story{
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    width:100%!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
+}
+
+@media(min-width:1051px){
+  /* One consistent vertical rhythm for the entire With Ad Premium panel. */
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    row-gap:16px!important;
+    padding:0 14px 16px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature{
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading{
+    margin-bottom:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    gap:16px!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story{
+    margin:0!important;
+    padding:0!important;
+    border-top:1px solid #dec06a!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    width:100%!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel .premium-feature h2{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:3!important;
+    overflow:hidden!important;
+    min-height:calc(3 * 1.12em)!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:3!important;
+    overflow:hidden!important;
+    min-height:calc(3 * 1.16em)!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story:nth-child(n+4){
+    display:none!important;
+  }
+}
+
+@media(min-width:1051px){
+  /* Exactly one feature; every remaining Premium story is a compact row. */
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:10px!important;
+    align-items:start!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:10px 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  /* Keep the first compact story at the same distance from the feature as
+     the compact stories are from one another. */
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature + .premium-list.premium-list{
+    margin-top:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child{
+    padding-top:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story img{
+    grid-column:1!important;
+    grid-row:1 / span 3!important;
+    display:block!important;
+    width:88px!important;
+    height:66px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story>div{
+    grid-column:2!important;
+    min-width:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story h3{
+    font-size:15px!important;
+    line-height:1.16!important;
+    margin:4px 0!important;
+  }
+}
+
+@media(min-width:1051px){
+  /* Use all existing compact Premium stories below the feature. */
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story:nth-child(n+3){
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:10px!important;
+    align-items:start!important;
+    flex:0 0 auto!important;
+    padding:10px 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story:nth-child(n+3) img{
+    grid-column:1!important;
+    grid-row:1 / span 3!important;
+    width:88px!important;
+    height:66px!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story:nth-child(n+3)>div{
+    grid-column:2!important;
+    min-width:0!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature.premium-feature p{
+    display:block!important;
+    color:#777!important;
+    font:400 12px/1.28 'Roboto Slab',serif!important;
+    margin:5px 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story p{
+    display:none!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel .premium-heading{
+    display:flex!important;
+    flex:0 0 58px!important;
+    width:calc(100% + 28px)!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px 12px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+    border-radius:4px 4px 0 0!important;
+    background:#54231d!important;
+  }
+}
+
+/* With Ad Premium composition: one feature followed by compact thumbnail
+   stories, filling only the Premium panel's synchronized height. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    position:relative!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    justify-content:space-between!important;
+    gap:0!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:14px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:10px!important;
+    align-items:start!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:12px 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    grid-column:1!important;
+    grid-row:1 / span 3!important;
+    display:block!important;
+    width:88px!important;
+    height:66px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story>div{
+    grid-column:2!important;
+    min-width:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:15px!important;
+    line-height:1.16!important;
+    margin:4px 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story .story-meta{
+    font-size:11px!important;
+    line-height:1.2!important;
+    margin-top:5px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:12px 0 0!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel .premium-feature h2,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:17px!important;
+    line-height:1.12!important;
+    margin:5px 0!important;
+  }
+}
+
+/* Single authoritative desktop grid relationship. Main and Middle remain
+   intrinsic; Premium is the only column allowed to stretch to the row. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-wireframe.desktop-wireframe{
+    align-items:start!important;
+    grid-template-rows:minmax(0,auto) minmax(0,auto)!important;
+  }
+
+  html body.with-ad .desktop-main-story.desktop-main-story,
+  html body.with-ad .desktop-middle-rail.desktop-middle-rail{
+    align-self:start!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature,
+  html body.with-ad .desktop-premium-panel .premium-list,
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    min-height:0!important;
+    margin:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:block!important;
+    flex:0 0 auto!important;
+    padding:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature img,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature p,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story p{
+    display:none!important;
+  }
+}
+
+/* Authoritative With Ad alignment rules. Main and Middle define the row;
+   Premium alone stretches to the same bottom edge. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-wireframe.desktop-wireframe{
+    align-items:start!important;
+  }
+
+  html body.with-ad .desktop-main-story.desktop-main-story,
+  html body.with-ad .desktop-middle-rail.desktop-middle-rail{
+    align-self:start!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature,
+  html body.with-ad .desktop-premium-panel .premium-list,
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex-direction:column!important;
+    flex:0 0 auto!important;
+    gap:16px!important;
+    margin:16px 0 0!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature img,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:block!important;
+    flex:0 0 auto!important;
+    padding:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature p,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story p{
+    display:none!important;
+  }
+}
+
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    height:auto!important;
+    align-self:stretch!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature p,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story p{
+    display:none!important;
+  }
+}
+
+/* Stable With Ad Premium rhythm: prevent flex growth from creating a large
+   gap between the featured story and the two supporting stories. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-wireframe{
+    align-items:start!important;
+  }
+
+  html body.with-ad .desktop-main-story,
+  html body.with-ad .desktop-middle-rail{
+    align-self:start!important;
+    height:auto!important;
+    min-height:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    flex:0 0 auto!important;
+    gap:16px!important;
+    margin-top:16px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    flex:0 0 auto!important;
+    padding:16px 0 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature img,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    height:150px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story p{
+    display:block!important;
+    color:#777!important;
+    font:400 12px/1.28 'Roboto Slab',serif!important;
+    margin:5px 0!important;
+  }
+}
+
+/* Final source of truth for the With Ad Premium block. Restore the original
+   aspect-ratio behavior and prevent legacy overrides from clipping it. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:none!important;
+    grid-template-rows:none!important;
+    grid-template-areas:none!important;
+    height:auto!important;
+    min-height:0!important;
+    align-self:stretch!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature,
+  html body.with-ad .desktop-premium-panel .premium-list,
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature img,
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+    margin:0 0 8px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:block!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:16px 0 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:18px!important;
+    line-height:1.16!important;
+    margin:5px 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story p{
+    display:block!important;
+    color:#777!important;
+    font:400 12px/1.28 'Roboto Slab',serif!important;
+    margin:5px 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:16px 0 0!important;
+  }
+}
+
 html,body{font-family:'Roboto Slab',serif}
 a{color:#111}
 h1,h2,h3,h4,h5,h6,.hero-overlay h1,.section-heading h2,.premium-heading h2,.premium-feature h2,.story-card h2,.compact-story h3,.quote-card p{font-family:'Playfair Display',serif}
@@ -139,6 +894,66 @@ body.with-ad .top-ad{display:block}
   .premium-panel{margin-left:0;margin-right:0}
   body.with-ad .top-ad{display:block!important;width:100%;height:auto;margin:0 0 12px}
   body.with-ad .top-ad .ad-creative{width:min(300px,100%);height:250px;min-height:250px;margin:auto}
+}
+
+/* Final With Ad Premium rhythm: use the panel's shared height for spacing so
+   the CTA stays inside the card with equal side and bottom padding. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    box-sizing:border-box!important;
+    row-gap:12px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    gap:12px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:0!important;
+    padding:2px 0!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+4){
+    display:grid!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story img{
+    width:88px!important;
+    height:66px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
 }
 
 /* Global corner-radius standard */
@@ -408,6 +1223,653 @@ body.with-ad .top-ad{display:block}
   }
   .standard-story-list .compact-story{
     padding:10px 0!important;
+  }
+}
+
+/* Final Premium stacking correction: all three With Ad stories must use one
+   full-width vertical column inside the Premium panel. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    position:relative!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    box-sizing:border-box!important;
+    row-gap:4px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading.premium-heading{
+    flex:0 0 58px!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px 10px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    gap:4px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:9px!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:2px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story img{
+    display:block!important;
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+4){
+    display:grid!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child{
+    margin-top:16px!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story::before{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    top:calc(-1 * var(--premium-separator-offset, 0px))!important;
+    height:1px!important;
+    background:#dec06a!important;
+    pointer-events:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child::before{
+    top:-10px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:10!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
+
+  body.with-ad .desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:none!important;
+    grid-template-rows:none!important;
+    grid-template-areas:none!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature,
+  body.with-ad .desktop-premium-panel .premium-list,
+  body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    padding:0!important;
+    min-height:0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature img{
+    width:100%!important;
+    height:170px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:block!important;
+    flex:1 1 0!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:16px 0 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:135px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0 0 8px!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:18px!important;
+    line-height:1.16!important;
+    margin:5px 0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:16px 0 0!important;
+  }
+}
+
+/* Absolute final With Ad Premium spacing override. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    box-sizing:border-box!important;
+    row-gap:12px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    justify-content:space-between!important;
+    gap:0!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:0!important;
+    padding:8px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:0!important;
+    }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story::before{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    top:-6px!important;
+    height:1px!important;
+    background:#dec06a!important;
+    pointer-events:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story img{
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child{
+    padding-top:8px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin-top:auto!important;
+    margin-right:0!important;
+    margin-bottom:0!important;
+    margin-left:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
+}
+
+/* Final With Ad Premium sizing override. This must remain last so the three
+   story layout wins over the earlier desktop compact-card rules. */
+@media(min-width:1051px){
+  body.with-ad .desktop-premium-panel{
+    display:grid!important;
+    grid-template-rows:auto auto minmax(0,1fr) auto!important;
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature{
+    min-height:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:clamp(150px,18vh,210px)!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    min-height:0!important;
+    margin-top:16px!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding:8px 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:clamp(110px,15vh,170px)!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    flex:0 0 auto!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:16px!important;
+    line-height:1.14!important;
+    margin:5px 0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    display:block!important;
+    width:auto!important;
+    grid-row:4!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
+}
+
+/* Last With Ad Premium override: fixed story rhythm and CTA-only fill. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    position:relative!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    box-sizing:border-box!important;
+    row-gap:4px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading.premium-heading{
+    margin-bottom:10px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    gap:4px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:2px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story img{
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story::before{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    top:calc(-1 * var(--premium-separator-offset, 0px))!important;
+    height:1px!important;
+    background:#dec06a!important;
+    pointer-events:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+4){
+    display:grid!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child{
+    /* Add breathing room only after the featured story. */
+    margin-top:16px!important;
+    padding-top:0!important;
+    padding-bottom:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story:first-child::before{
+    top:-10px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:5!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+    align-self:stretch!important;
+  }
+}
+
+/* Final Premium stacking correction: all three With Ad stories use one
+   full-width vertical column inside the Premium panel. */
+@media(min-width:1051px){
+  body.with-ad .desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-columns:none!important;
+    grid-template-rows:none!important;
+    grid-template-areas:none!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature,
+  body.with-ad .desktop-premium-panel .premium-list,
+  body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    padding:0!important;
+    min-height:0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature img{
+    width:100%!important;
+    height:170px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:16px 0 0!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:block!important;
+    flex:1 1 0!important;
+    width:100%!important;
+    min-height:0!important;
+    padding:16px 0 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:135px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0 0 8px!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:18px!important;
+    line-height:1.16!important;
+    margin:5px 0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    width:100%!important;
+    margin:16px 0 0!important;
+  }
+}
+
+/* With Ad desktop alignment: distribute the two middle stories through the
+   available rail height so the ad and the main story share the same bottom. */
+@media(min-width:1051px){
+  body.with-ad .desktop-wireframe{
+    align-items:stretch!important;
+  }
+
+  body.with-ad .desktop-main-story,
+  body.with-ad .desktop-middle-rail,
+  body.with-ad .desktop-premium-panel{
+    align-self:stretch!important;
+  }
+
+  body.with-ad .desktop-middle-rail{
+    display:flex!important;
+    flex-direction:column!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    justify-content:flex-start!important;
+    min-height:0!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news{
+    display:grid!important;
+    grid-template-rows:auto minmax(0,1fr) auto!important;
+    position:relative!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news::before{
+    content:'';
+    grid-row:2!important;
+    align-self:center!important;
+    width:100%!important;
+    border-top:1px solid #dedede!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news .desktop-more-story:nth-of-type(1){
+    grid-row:1!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news .desktop-more-story:nth-of-type(2){
+    grid-row:3!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-more-news .desktop-more-story + .desktop-more-story{
+    margin-top:0!important;
+    padding-top:0!important;
+    border-top:0!important;
+  }
+
+  body.with-ad .desktop-middle-rail .desktop-ad-slot{
+    flex:0 0 250px!important;
+  }
+}
+
+/* With Ad Premium presentation: three full-size stories that fill the
+   Premium column cleanly alongside the Main and Middle sections. */
+@media(min-width:1051px){
+  body.with-ad .desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    align-self:stretch!important;
+    height:auto!important;
+    min-height:0!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature{
+    flex:1 1 0!important;
+    padding:0!important;
+    min-height:0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature img{
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.7!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:grid!important;
+    grid-template-rows:repeat(2,minmax(0,1fr))!important;
+    gap:10px!important;
+    flex:1 1 0!important;
+    min-height:0!important;
+    margin-top:12px!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding:10px 0!important;
+    border-top:1px solid #dec06a!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.7!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:18px!important;
+    line-height:1.14!important;
+    margin:6px 0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+    margin-top:12px!important;
   }
 }
 
@@ -1290,4 +2752,310 @@ body.with-ad .top-ad{display:block}
     margin-top:14px!important;
   }
   .desktop-premium-panel{overflow:visible!important}
+}
+
+/* Large-screen content visibility correction. Keep the existing desktop
+   composition and sizing, but let every rail grow with its content. */
+@media(min-width:1051px){
+  .desktop-wireframe{
+    height:auto!important;
+    min-height:0!important;
+    align-items:start!important;
+  }
+
+  .desktop-main-story,
+  .desktop-middle-rail,
+  .desktop-premium-panel{
+    height:auto!important;
+    min-height:0!important;
+    align-self:start!important;
+  }
+
+  .desktop-middle-rail{
+    position:static!important;
+  }
+
+  .desktop-middle-rail .desktop-more-news{
+    height:auto!important;
+    max-height:none!important;
+    overflow:visible!important;
+  }
+
+  .desktop-middle-rail .desktop-ad-slot,
+  .desktop-middle-rail .desktop-lite-fill{
+    position:static!important;
+    height:250px!important;
+    margin-top:14px!important;
+  }
+
+  .desktop-premium-panel{
+    overflow:visible!important;
+  }
+
+  .desktop-support-story h2,
+  .desktop-more-story h2,
+  .desktop-more-story p,
+  .desktop-premium-panel .premium-feature h2,
+  .desktop-premium-panel .premium-feature p,
+  .desktop-premium-panel .premium-list .compact-story h3{
+    display:block!important;
+    -webkit-line-clamp:unset!important;
+    overflow:visible!important;
+  }
+}
+
+/* Final With Ad Premium sizing override. Keep the three stories inside the
+   shared desktop row while preserving the existing column widths. */
+@media(min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    position:relative!important;
+    height:100%!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:10!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
+
+  body.with-ad .desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    grid-template-rows:auto auto minmax(0,1fr) auto!important;
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature,
+  body.with-ad .desktop-premium-panel .premium-list,
+  body.with-ad .desktop-premium-panel .premium-cta{
+    grid-area:auto!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    width:100%!important;
+    margin-top:16px!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature{
+    min-height:0!important;
+    padding:0!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:clamp(150px,18vh,210px)!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list{
+    display:flex!important;
+    flex:1 1 auto!important;
+    flex-direction:column!important;
+    gap:16px!important;
+    min-height:0!important;
+    margin-top:16px!important;
+    overflow:visible!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story{
+    display:flex!important;
+    flex-direction:column!important;
+    min-height:0!important;
+    padding:8px 0!important;
+    border-top:1px solid #dec06a!important;
+    overflow:hidden!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story:nth-child(n+3){
+    display:none!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story img{
+    display:block!important;
+    width:100%!important;
+    height:clamp(110px,15vh,170px)!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    flex:0 0 auto!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-list .compact-story h3{
+    font-size:16px!important;
+    line-height:1.14!important;
+    margin:5px 0!important;
+  }
+
+  body.with-ad .desktop-premium-panel .premium-cta{
+    grid-row:4!important;
+    margin-top:10px!important;
+  }
+}
+
+/* Last-word With Ad premium rules. Keep these after every legacy experiment
+   so the premium panel has one predictable geometry in the ad view. */
+@media (min-width:1051px){
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list{
+    margin-top:0!important;
+    padding-top:18px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story{
+    grid-template-columns:80px minmax(0,1fr)!important;
+    column-gap:8px!important;
+    padding:16px 0 0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story img{
+    width:80px!important;
+    height:46px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story h3{
+    margin:2px 0!important;
+    font-size:14px!important;
+    line-height:1.05!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story .story-meta{
+    margin-top:2px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list .compact-story::before{
+    display:none!important;
+    content:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    position:relative!important;
+    box-sizing:border-box!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    overflow:hidden!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-heading.premium-heading{
+    flex:0 0 58px!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px 10px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-feature.premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:0!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:10px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:9px!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:10px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story img{
+    display:block!important;
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story > div{
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story h3{
+    margin:4px 0!important;
+    font-size:16px!important;
+    line-height:1.14!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story p{
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story .story-meta{
+    margin-top:4px!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(-n+4){
+    display:grid!important;
+  }
+
+  html body.with-ad .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:10!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
 }
