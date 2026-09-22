@@ -85,6 +85,22 @@
     box-sizing:border-box!important;
   }
 
+  /* Keep one Premium category label and use the standard desktop label size. */
+  html body.with-ad .desktop-wireframe .eyebrow{
+    font-size:14px!important;
+    line-height:1.2!important;
+  }
+  html body.with-ad .desktop-premium-panel .premium-feature .eyebrow,
+  html body.with-ad .desktop-premium-panel .premium-list .eyebrow{
+    font-size:14px!important;
+    line-height:1.2!important;
+  }
+  html body.with-ad .desktop-premium-panel .premium-feature .eyebrow::after,
+  html body.with-ad .desktop-premium-panel .premium-list .eyebrow::after{
+    content:none!important;
+    display:none!important;
+  }
+
   html body.with-ad .desktop-premium-panel .premium-feature.premium-feature{
     flex:0 0 auto!important;
     width:100%!important;
@@ -2567,7 +2583,7 @@ body.with-ad .top-ad{display:block}
   .desktop-main-story{
     height:100%!important;
     grid-template-rows:minmax(0,1fr) auto!important;
-    gap:14px!important;
+    gap:4px!important;
     min-height:0!important;
   }
   .desktop-main-story .hero-story{
@@ -2582,7 +2598,7 @@ body.with-ad .top-ad{display:block}
   }
   .desktop-main-story .hero-copy{
     margin-top:-72px!important;
-    padding:84px 18px 14px!important;
+    padding:74px 18px 14px!important;
   }
   .desktop-main-story .hero-copy h1{
     font-size:30px!important;
@@ -2602,7 +2618,7 @@ body.with-ad .top-ad{display:block}
     min-width:0!important;
   }
   .desktop-support-story img{
-    aspect-ratio:1.7!important;
+    aspect-ratio:1.5!important;
   }
   .desktop-support-story .eyebrow,
   .desktop-more-story .eyebrow,
@@ -2610,10 +2626,11 @@ body.with-ad .top-ad{display:block}
     font-size:14px!important;
     line-height:1.2!important;
   }
+  .desktop-support-story .eyebrow{margin-top:6px!important}
   .desktop-support-story h2{
     font-size:16px!important;
     line-height:1.14!important;
-    margin:5px 0!important;
+    margin:3px 0!important;
     display:-webkit-box!important;
     -webkit-box-orient:vertical!important;
     -webkit-line-clamp:2!important;
@@ -2625,6 +2642,7 @@ body.with-ad .top-ad{display:block}
     font-size:12px!important;
     line-height:1.25!important;
   }
+  .desktop-support-story .story-meta{margin-top:3px!important}
 
   .desktop-middle-rail{
     height:100%!important;
@@ -2636,28 +2654,28 @@ body.with-ad .top-ad{display:block}
     overflow:hidden!important;
   }
   .desktop-more-news .desktop-more-story + .desktop-more-story{
-    margin-top:10px!important;
-    padding-top:10px!important;
+    margin-top:4px!important;
+    padding-top:4px!important;
   }
   .desktop-more-story img{
-    aspect-ratio:1.7!important;
+    aspect-ratio:1.5!important;
   }
   .desktop-more-story h2{
     font-size:17px!important;
     line-height:1.12!important;
-    margin:5px 0!important;
+    margin:3px 0!important;
     display:-webkit-box!important;
     -webkit-box-orient:vertical!important;
-    -webkit-line-clamp:3!important;
+    -webkit-line-clamp:2!important;
     overflow:hidden!important;
   }
   .desktop-more-story p{
     font-size:12px!important;
     line-height:1.28!important;
-    margin:5px 0!important;
+    margin:1px 0!important;
     display:-webkit-box!important;
     -webkit-box-orient:vertical!important;
-    -webkit-line-clamp:2!important;
+    -webkit-line-clamp:1!important;
     overflow:hidden!important;
   }
   .desktop-more-story .story-meta{margin-top:5px!important}
@@ -2914,26 +2932,36 @@ body.with-ad .top-ad{display:block}
    so the premium panel has one predictable geometry in the ad view. */
 @media (min-width:1051px){
   html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list{
+    flex:1 1 auto!important;
+    min-height:0!important;
     margin-top:0!important;
-    padding-top:18px!important;
+    padding:18px 0 62px!important;
     box-sizing:border-box!important;
+    overflow:hidden!important;
   }
 
   html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story{
     grid-template-columns:80px minmax(0,1fr)!important;
     column-gap:8px!important;
+    flex:1 1 0!important;
+    min-height:0!important;
     padding:16px 0 0!important;
+    overflow:hidden!important;
   }
 
   html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story img{
     width:80px!important;
-    height:46px!important;
+    height:53px!important;
   }
 
   html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story h3{
     margin:2px 0!important;
     font-size:14px!important;
-    line-height:1.05!important;
+    line-height:1.08!important;
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
   }
 
   html body.with-ad .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story .story-meta{
@@ -3058,4 +3086,239 @@ body.with-ad .top-ad{display:block}
     padding:10px 12px!important;
     box-sizing:border-box!important;
   }
+}
+
+/* Last-word With Ad premium rules. Keep these after every legacy experiment
+   so the premium panel has one predictable geometry in the ad view. */
+@media (min-width:1051px){
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list{
+    flex:1 1 auto!important;
+    min-height:0!important;
+    margin-top:0!important;
+    padding:18px 0 62px!important;
+    box-sizing:border-box!important;
+    overflow:hidden!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story{
+    grid-template-columns:80px minmax(0,1fr)!important;
+    column-gap:8px!important;
+    flex:1 1 0!important;
+    min-height:0!important;
+    padding:16px 0 0!important;
+    overflow:hidden!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story img{
+    width:80px!important;
+    height:53px!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story h3{
+    margin:2px 0!important;
+    font-size:14px!important;
+    line-height:1.08!important;
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:2!important;
+    overflow:hidden!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel .premium-list.premium-list .compact-story.compact-story.compact-story.compact-story.compact-story .story-meta{
+    margin-top:2px!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list .compact-story::before{
+    display:none!important;
+    content:none!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel.desktop-premium-panel{
+    display:flex!important;
+    flex-direction:column!important;
+    position:relative!important;
+    box-sizing:border-box!important;
+    height:100%!important;
+    min-height:0!important;
+    padding:0 14px 12px!important;
+    overflow:hidden!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-heading.premium-heading{
+    flex:0 0 58px!important;
+    height:58px!important;
+    min-height:58px!important;
+    margin:0 -14px 10px!important;
+    padding:8px 14px!important;
+    box-sizing:border-box!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-feature.premium-feature{
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:0!important;
+    overflow:visible!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-feature.premium-feature img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list{
+    display:flex!important;
+    flex:0 0 auto!important;
+    flex-direction:column!important;
+    gap:0!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:10px 0 0!important;
+    overflow:visible!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story{
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:9px!important;
+    flex:0 0 auto!important;
+    width:100%!important;
+    min-height:0!important;
+    margin:0!important;
+    padding:10px 0!important;
+    box-sizing:border-box!important;
+    position:relative!important;
+    border-top:1px solid #dec06a!important;
+    overflow:visible!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story img{
+    display:block!important;
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+    margin:0!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story > div{
+    min-width:0!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story h3{
+    margin:4px 0!important;
+    font-size:16px!important;
+    line-height:1.14!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story p{
+    display:none!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story .story-meta{
+    margin-top:4px!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(n+5){
+    display:none!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-list.premium-list > .compact-story.compact-story.compact-story.compact-story:nth-child(-n+4){
+    display:grid!important;
+  }
+
+  html body:not(.with-ad) .desktop-premium-panel .premium-cta.premium-cta{
+    position:absolute!important;
+    left:14px!important;
+    right:14px!important;
+    bottom:12px!important;
+    z-index:10!important;
+    display:block!important;
+    width:auto!important;
+    margin:0!important;
+    padding:10px 12px!important;
+    box-sizing:border-box!important;
+  }
+}
+
+
+/* Ad Lite mirrors the With Ad desktop composition; only the middle content differs. */
+@media(min-width:1051px){
+  body:not(.with-ad) .desktop-wireframe{align-items:stretch!important}
+  body:not(.with-ad) .desktop-main-story,
+  body:not(.with-ad) .desktop-middle-rail,
+  body:not(.with-ad) .desktop-premium-panel{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail{
+    display:flex!important;
+    flex-direction:column!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-news{
+    display:grid!important;
+    flex:1 1 auto!important;
+    grid-template-rows: auto repeat(3,minmax(0,1fr))!important;
+    gap:8px!important;
+    width:100%!important;
+    height:100%!important;
+    max-height:100%!important;
+    min-height:0!important;
+    overflow:hidden!important;
+    box-sizing:border-box!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story{
+    min-height:0!important;
+    overflow:hidden!important;
+    margin:0!important;
+    padding:0!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story + .desktop-more-story{
+    border-top:1px solid #dedede!important;
+    padding-top:6px!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story img{
+    display:block!important;
+    width:100%!important;
+    height:auto!important;
+    aspect-ratio:1.5!important;
+    object-fit:cover!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story .eyebrow{
+    display:block!important;
+    margin-top:4px!important;
+    font:400 14px/1.2 'Roboto Slab',serif!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story h2{
+    display:-webkit-box!important;
+    -webkit-box-orient:vertical!important;
+    -webkit-line-clamp:1!important;
+    overflow:hidden!important;
+    margin:3px 0!important;
+    font:700 17px/1.12 'Playfair Display',serif!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story p{
+    display:none!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-more-story .story-meta{
+    margin-top:3px!important;
+    font:400 12px/1.25 'Roboto Slab',serif!important;
+  }
+  body:not(.with-ad) .desktop-middle-rail .desktop-lite-fill,
+  body:not(.with-ad) .desktop-middle-rail .desktop-ad-slot{
+    display:none!important;
+  }
+}
+
+/* The third middle story replaces the ad only in Ad Lite mode. */
+@media(min-width:1051px){
+  body.with-ad .desktop-middle-rail .desktop-lite-third-story{display:none!important}
 }
