@@ -3378,3 +3378,146 @@ body.with-ad .desktop-middle-rail .desktop-lite-third-story{display:none!importa
   .floating-mode-toolbar .mode-button[data-mode="subscribers-lite"]::after{content:"Subscribers";font-size:11px}
   .floating-mode-toolbar .mode-button[data-mode="brandspot-lite"]::after{content:"Brandspot";font-size:11px}
 }
+
+/* Final desktop mode matrix. Columns one and three intentionally share the
+   With Ad geometry; only the middle rail changes by mode. */
+@media (min-width:1051px){
+  body.with-ad[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-ad-slot,
+  body.with-ad[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-ad-slot{
+    display:none!important;
+  }
+
+  body[data-mode="subscribers-lite"] .desktop-main-story,
+  body[data-mode="subscribers-lite"] .desktop-premium-panel,
+  body[data-mode="brandspot-lite"] .desktop-main-story,
+  body[data-mode="brandspot-lite"] .desktop-premium-panel{
+    align-self:stretch!important;
+    height:100%!important;
+    min-height:0!important;
+  }
+
+  body[data-mode="subscribers-lite"] .desktop-premium-panel,
+  body[data-mode="brandspot-lite"] .desktop-premium-panel{
+    grid-template-columns:none!important;
+  }
+  body[data-mode="subscribers-lite"] .desktop-premium-panel .premium-cta,
+  body[data-mode="brandspot-lite"] .desktop-premium-panel .premium-cta{
+    flex:0 0 auto!important;
+  }
+
+  body[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-more-story h2,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-story h2{
+    display:block!important;
+    -webkit-line-clamp:unset!important;
+    overflow:visible!important;
+  }
+
+  body[data-mode="with-ad"] .desktop-middle-rail .desktop-more-story:nth-of-type(n+3),
+  body[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-more-story:nth-of-type(n+4),
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-story:nth-of-type(-n+2){
+    display:block!important;
+  }
+  body[data-mode="with-ad"] .desktop-middle-rail .desktop-more-story:nth-of-type(n+3),
+  body[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-more-story:nth-of-type(n+4){
+    display:none!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-story:nth-of-type(n+3){
+    display:block!important;
+  }
+
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+    grid-template-rows:auto auto auto auto!important;
+    column-gap:12px!important;
+    row-gap:0!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news .section-heading{
+    grid-column:1/-1!important;
+    grid-row:1!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(2),
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(3){
+    grid-column:1/-1!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(2){grid-row:2!important}
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(3){grid-row:3!important}
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4){grid-column:1/-1!important;grid-row:4!important}
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5){grid-column:1/-1!important;grid-row:5!important}
+}
+
+@media (min-width:1051px){
+  body[data-mode="subscribers-lite"] .desktop-main-story,
+  body[data-mode="brandspot-lite"] .desktop-main-story{
+    grid-template-rows:max-content max-content!important;
+  }
+}
+
+@media (min-width:1051px){
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4),
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5){
+    display:grid!important;
+    grid-template-columns:88px minmax(0,1fr)!important;
+    column-gap:10px!important;
+    align-items:start!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > a,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > a{
+    grid-column:1!important;
+    grid-row:1 / span 3!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > a > img,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > a > img{
+    width:88px!important;
+    height:58px!important;
+    aspect-ratio:auto!important;
+    object-fit:cover!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > .eyebrow,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > .eyebrow,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > h2,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > h2,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > .story-meta,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > .story-meta{
+    grid-column:2!important;
+  }
+}
+
+@media (min-width:1051px){
+  html body[data-mode] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(n+2){
+    border-top:0!important;
+    position:relative!important;
+  }
+  html body[data-mode] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(n+2)::before{
+    content:""!important;
+    position:absolute!important;
+    left:0!important;
+    right:0!important;
+    top:-8px!important;
+    height:2px!important;
+    background:#a8b0b3!important;
+    z-index:2!important;
+  }
+  html body.with-ad[data-mode="with-ad"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(2)::before,
+  html body.with-ad[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(2)::before{
+    top:-13px!important;
+  }
+  html body.with-ad[data-mode="subscribers-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(3)::before{
+    top:-6px!important;
+  }
+  html body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-of-type(n+2)::before{
+    top:-1px!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4),
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5){
+    margin-top:10px!important;
+    padding-top:8px!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4)::before,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5)::before{
+    top:-6px!important;
+  }
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(4) > a,
+  body[data-mode="brandspot-lite"] .desktop-middle-rail .desktop-more-news > .desktop-more-story:nth-child(5) > a{
+    border-right:1px solid #dedede!important;
+  }
+}
