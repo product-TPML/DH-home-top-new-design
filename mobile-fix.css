@@ -1796,14 +1796,6 @@ body.with-ad .top-ad{display:block}
     position:relative!important;
   }
 
-  body.with-ad .desktop-middle-rail .desktop-more-news::before{
-    content:'';
-    grid-row:2!important;
-    align-self:center!important;
-    width:100%!important;
-    border-top:1px solid #dedede!important;
-  }
-
   body.with-ad .desktop-middle-rail .desktop-more-news .desktop-more-story:nth-of-type(1){
     grid-row:1!important;
   }
