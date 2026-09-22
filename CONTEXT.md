@@ -20,45 +20,36 @@ The desktop view uses an explicit three-column editorial dashboard in `.desktop-
 
 1. Main story column:
    - One hero story with category, headline, subheading, and timestamp integrated into the lower image gradient.
-   - Two supporting stories beneath the hero.
+   - Two non hero stories stories beneath the hero.it should contain headline, category label and timestamp.
 2. Middle rail:
-   - Two More News stories.
-   - A fixed 300 × 250 slot at the bottom in With Ad mode.
-   - Two compact replacement stories occupying the same bottom slot in Ad Lite mode.
+   - Middle-rail stories contain only an image, headline, category label, and timestamp.
+   - With Ad: two non-hero stories, followed by a 300 × 250 ad slot beneath them.
+   - Ad Lite for Subscribers: no ad; show three non-hero stories, with the added story using the same layout as the other two.
+   - Ad Lite for Brandspot: no ad; show two brand stories side by side, each with an image and its story content.
 3. Premium rail:
    - Premium header with the supplied premium icon PNG.
-   - One featured Premium story.
-   - Four compact Premium stories.
+   - One hero Premium story with category, headline with premium icon at the satrting, subheading, and timestamp integrated into the lower image gradient.
+   - Four non hero Premium stories, it should contain  image, headline with premium icon at the statrting, category label, and timestamp.
    - Premium CTA anchored inside the bottom of the Premium rail.
-   - In the desktop With Ad view, the Premium rail keeps the shared rail height;
-     the featured-story timestamp has an explicit 18px separation before the
-     first compact-story separator, and every compact story has 16px from its
-     separator to its image.
 
-The desktop rails share the same top and bottom geometry. The wide desktop layout is bounded to fit a 1920 × 1080 first viewport using compact spacing, while shorter desktop screens fall back to natural page flow rather than clipping content.
-
-The legacy `.news-grid` remains the mobile source structure and is hidden on desktop. Desktop-specific corrections belong in `mobile-fix.css`, whose later rules are authoritative.
 
 ### Mobile
 
 - Mobile-first stacked layout.
-- Compact DH masthead with Subscribe, account, search, and hamburger controls.
-- Horizontally scrollable section navigation.
-- Full-screen hamburger/search panel with grouped navigation links.
-- Hero story appears first with the headline integrated into the image treatment.
-- Four standard stories appear in the mobile sequence: two below the hero and two in More News.
-- The ad appears between standard content and Premium content only in With Ad mode.
-- Premium content follows the ad or its reserved Ad Lite replacement area.
-- No artificial equal-height desktop columns or unexplained mobile whitespace.
-
+- Hero story appears first with the headline integrated into the image treatment same set of details as desktop.
+- add the ad slot right after the hero story
+- Four non hero stories appear in the mobile sequence with side by side image and content (content is same as desktop)
+- The second ad appears between standard content and Premium content only in With Ad mode.
+- Premium content follows with one hero story plus 2 non hero stories.
 ## Ad Behavior
 
-The floating bottom-right mode switcher has two states:
+The floating bottom-right mode switcher supports three desktop middle-rail scenarios:
 
-- `Ad Lite`: hides the ad and displays two compact replacement stories in the reserved desktop bottom slot.
-- `With Ad`: displays `300x250.png` in the reserved desktop bottom slot.
+- `With Ad`: displays two non-hero stories, then `300x250.png` beneath them.
+- `Ad Lite for Subscribers`: hides the ad and displays a third non-hero story in the same layout as the other two.
+- `Ad Lite for Brandspot`: hides the ad and displays two brand stories side by side, with image and story content for each.
 
-The ad state must not change editorial story order. On desktop, the slot is outside the More News story content and remains aligned to the shared bottom edge. On mobile, the ad is part of the normal stacked flow.
+Every middle-rail story displays only its image, headline, category label, and timestamp. The ad state must not change the main editorial story order. On mobile, the ad is part of the normal stacked flow.
 
 ## Image and Card Rules
 
@@ -91,16 +82,4 @@ The project is now a local Git repository. The initial layout commit is:
 
 `ab6912c Implement responsive DH homepage layout`
 
-## Acceptance Checks
 
-- At 1920 × 1080, the desktop header and complete three-column editorial block fit in the first viewport.
-- Main, middle, Premium, and ad/Ad Lite rails align at the top and bottom on wide desktop screens.
-- The middle rail shows exactly two More News stories plus its mode-specific bottom slot.
-- Premium shows one featured story and four compact stories.
-- Mobile remains a stacked layout with four standard stories and no horizontal overflow.
-- Hero headline remains integrated into the hero image treatment.
-- Category labels and timestamps use the established typography scale.
-- Premium image ratios remain consistent.
-- Ad Lite and With Ad switch without changing editorial story order.
-- Shorter desktop viewports flow naturally instead of clipping stories.
-- No large unexplained whitespace appears inside the editorial rails.
