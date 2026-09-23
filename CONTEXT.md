@@ -19,6 +19,7 @@ Typography intent:
 - Main story column: one hero story with a 3:2 image and a dark gradient transition into the category, headline, subheading, and timestamp below the image; two non-hero stories with headline, category, and timestamp.
 - Middle rail stories contain an image, headline, category, and timestamp. With Ad shows two regular stories followed by the 300 × 250 ad; Subscribers Lite shows three regular stories and no ad; Brandspot Lite shows the first two regular stories followed by two smaller image-left Brandspot stories, stacked one below the other, and no ad.
 - Premium rail: supplied Premium icon, one featured story with category, headline, subheading, and timestamp, four non-hero stories, and a Premium CTA.
+- On desktop, the middle and Premium rails stretch to match the first-column height. Middle-rail stories distribute vertically within that space; the Premium CTA stays at the bottom. If content needs more room, the grid grows naturally rather than clipping.
 
 ### Mobile
 
@@ -38,7 +39,7 @@ On desktop, the three modes alter only the middle rail; the main editorial order
 - Every editorial story image—hero, first-column non-hero, middle-rail, Brandspot, Premium featured, and Premium compact—uses a responsive displayed 3:2 aspect ratio with `object-fit: cover`.
 - This 3:2 contract excludes the supplied `300x250.png` advertisement and Premium branding icons.
 - Corner radii are 4px or smaller where the layout requires square editorial edges.
-- Premium cards remain clean and content-driven; avoid flex stretching that creates artificial gaps.
+- Premium cards remain clean and content-driven. The outer Premium rail may stretch to align with the first column, while images keep their 3:2 ratio and story text remains unclipped.
 
 ## Files and assets
 
