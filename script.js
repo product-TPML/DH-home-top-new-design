@@ -7,7 +7,7 @@ function syncStoryLayout(){if(!standardList||!secondaryGrid||!splitStandardStori
 syncStoryLayout();mobileQuery.addEventListener?.('change',syncStoryLayout);
 function syncAdBaseline(){body.classList.toggle('with-ad',body.dataset.mode==='with-ad'||(desktopQuery.matches&&body.dataset.mode!=='with-ad'))}
 function setMode(mode){body.dataset.mode=mode;syncAdBaseline();buttons.forEach(b=>{const on=b.dataset.mode===mode;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});syncPremiumHeight()}
-function syncPremiumHeight(){if(!desktopPremiumPanel)return;desktopPremiumPanel.style.height='auto';if(!desktopQuery.matches)return;requestAnimationFrame(()=>{desktopPremiumPanel.style.height='auto';const h=Math.max(desktopMainStory?.getBoundingClientRect().height||0,desktopMiddleRail?.getBoundingClientRect().height||0);if(h>0)desktopPremiumPanel.style.height=Math.ceil(h)+'px'})}
+function syncPremiumHeight(){if(!desktopPremiumPanel)return;desktopPremiumPanel.style.height='auto';if(!desktopQuery.matches)return;requestAnimationFrame(()=>{desktopPremiumPanel.style.height='auto';const h=desktopMainStory?.getBoundingClientRect().height||0;if(h>0)desktopPremiumPanel.style.height=Math.ceil(h)+'px'})}
 buttons.forEach(b=>b.addEventListener('click',()=>setMode(b.dataset.mode)));
 const premiumHeightObserver=new ResizeObserver(syncPremiumHeight);if(desktopMainStory)premiumHeightObserver.observe(desktopMainStory);if(desktopMiddleRail)premiumHeightObserver.observe(desktopMiddleRail);
 desktopQuery.addEventListener?.('change',()=>{syncAdBaseline();syncPremiumHeight()});window.addEventListener('resize',syncPremiumHeight);window.addEventListener('load',()=>{syncAdBaseline();syncPremiumHeight()});syncAdBaseline();syncPremiumHeight();
