@@ -24,19 +24,20 @@ Typography intent:
 ### Mobile
 
 - Stacked layout with the lead hero first and its headline below the image, connected by a dark gradient transition.
-- With Ad shows the ad after the hero. Subscribers Lite and Brandspot Lite are ad-free on mobile.
-- Four non-hero stories follow in the mobile news sequence, with image and content side by side.
-- Premium follows the news content with one hero and two non-hero stories.
+- With Ad shows one ad after the hero and a second after the four standard non-hero stories, immediately before Premium. Subscribers Lite and Brandspot Lite are ad-free on mobile.
+- Four non-hero stories follow in the mobile news sequence, with image and content side by side; With Ad places its second ad after these stories and immediately before Premium.
+- Premium follows the news content with one hero and two non-hero stories. Its hero uses the dark burgundy copy surface and 3:2 image-to-copy gradient treatment; the compact stories retain the mobile horizontal layout. The mobile Premium panel has a 4px radius.
 
 ## Mode and responsive behavior
 
 The in-flow mode toolbar selects `With Ad`, `Ad Lite for Subscribers`, or `Ad Lite for Brandspot`. Mode state is represented by `body[data-mode]`. CSS owns mode visibility and responsive presentation; `script.js` only updates mode state and accessible menu interactions. Breakpoints are mobile `<=700px`, tablet `701–1050px`, and desktop `>=1051px`.
 
-On desktop, the three modes alter only the middle rail; the main editorial order remains unchanged. On mobile, only With Ad displays the ad after the hero, while both Lite modes are ad-free.
+On desktop, the three modes alter only the middle rail; the main editorial order remains unchanged. On mobile, With Ad displays an ad after the hero and a second ad after the four standard stories, immediately before Premium; both Lite modes are ad-free.
 
 ## Image and card rules
 
 - Every editorial story image—hero, first-column non-hero, middle-rail, Brandspot, Premium featured, and Premium compact—uses a responsive displayed 3:2 aspect ratio with `object-fit: cover`.
+- In mobile side-by-side image-and-text story cards (main support, middle/news, Brandspot, and Premium compact), the image occupies at least 40% of the card width.
 - This 3:2 contract excludes the supplied `300x250.png` advertisement and Premium branding icons.
 - Corner radii are 4px or smaller where the layout requires square editorial edges.
 - Desktop Premium layout uses the featured image/copy treatment and five horizontal image-left non-hero cards described above. Mobile and tablet continue to show the featured story and two compact stories. The Premium CTA has a 3px radius; the rail/grid may grow rather than clip content.
