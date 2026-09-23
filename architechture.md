@@ -8,4 +8,5 @@ This is a static HTML/CSS/JavaScript homepage prototype.
 - Desktop middle-rail modes show two regular stories plus an ad (With Ad), three regular stories without an ad (Subscribers Lite), or two regular stories followed by two compact, image-left Brandspot stories without an ad (Brandspot Lite).
 - On mobile, only With Ad shows the ad after the hero; both Lite modes are ad-free.
 - All editorial story images display at 3:2 with `object-fit: cover`; ad creative and branding icons retain their own proportions. The Perspective quote card is not part of the page.
+- The lead hero keeps its 3:2 photo in a separate frame; its copy follows below on a dark surface connected to the photo by a gradient.
 - Retained assets include `300x250.png`, `premium-icon.png`, `premium-icon.svg`, and the existing editorial imagery referenced by `index.html`.

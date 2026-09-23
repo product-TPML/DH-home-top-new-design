@@ -16,13 +16,13 @@ Typography intent:
 
 ### Desktop
 
-- Main story column: one hero story with category, headline, subheading, and timestamp integrated into the lower image gradient; two non-hero stories with headline, category, and timestamp.
+- Main story column: one hero story with a 3:2 image and a dark gradient transition into the category, headline, subheading, and timestamp below the image; two non-hero stories with headline, category, and timestamp.
 - Middle rail stories contain an image, headline, category, and timestamp. With Ad shows two regular stories followed by the 300 × 250 ad; Subscribers Lite shows three regular stories and no ad; Brandspot Lite shows the first two regular stories followed by two smaller image-left Brandspot stories, stacked one below the other, and no ad.
 - Premium rail: supplied Premium icon, one featured story with category, headline, subheading, and timestamp, four non-hero stories, and a Premium CTA.
 
 ### Mobile
 
-- Stacked layout with the lead hero first and the headline integrated into the image treatment.
+- Stacked layout with the lead hero first and its headline below the image, connected by a dark gradient transition.
 - With Ad shows the ad after the hero. Subscribers Lite and Brandspot Lite are ad-free on mobile.
 - Four non-hero stories follow in the mobile news sequence, with image and content side by side.
 - Premium follows the news content with one hero and two non-hero stories.
