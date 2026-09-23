@@ -64,8 +64,6 @@ img{display:block;max-width:100%;object-fit:cover}
 .story-card .eyebrow{margin-top:8px;font-size:11px}
 .story-card h2{font-size:17px;line-height:1.15;margin:4px 0 0}
 .story-card h2 a,.news-card h3 a,.premium-feature h2 a,.compact-story h3 a{text-decoration:none}
-.section-heading{border-bottom:2px solid var(--ink);padding:0 0 8px;margin-bottom:12px}
-.section-heading h2{font:700 19px "Playfair Display",Georgia,serif;margin:0}
 .latest-list{display:grid;gap:14px}
 .news-card{min-width:0;display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
 .news-card>a{display:block}
@@ -104,13 +102,14 @@ img{display:block;max-width:100%;object-fit:cover}
 /* Tablet uses the same source order and a constrained two-column content grid. */
 @media (min-width:701px) and (max-width:1050px){
   .dh-header-inner,.dh-subnav-inner{width:calc(100% - 32px)}.dh-header-inner{gap:14px}.dh-logo{width:66px}.dh-logo strong{font-size:39px}.dh-main-nav{justify-content:flex-start;gap:5px;overflow:hidden}.dh-main-nav a{font-size:clamp(9px,1.25vw,13px)}.dh-actions{gap:4px}.dh-subscribe{font-size:12px;padding:7px}.dh-subnav nav{overflow:hidden}
-  .shell{width:calc(100% - 44px)}.news-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}.lead-column{grid-column:1;grid-row:1}.latest-panel{grid-column:2;grid-row:1;min-width:0}.right-rail{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:20px;align-items:start}.premium-panel{grid-column:2}.latest-list{gap:12px}.news-card img{aspect-ratio:1.5}.brandspot-story,.mobile-standard{display:none}.ad-slot{display:none}body[data-mode="with-ad"] .ad-slot{display:block}
+  .secondary-grid{border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}
+  .shell{width:calc(100% - 44px)}.news-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}.lead-column{grid-column:1;grid-row:1}.latest-panel{grid-column:2;grid-row:1;min-width:0}.right-rail{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:20px;align-items:start}.premium-panel{grid-column:2}.latest-list{gap:12px}.news-card:nth-child(2){margin-top:-6px;border-top:1px solid var(--line);padding-top:6px}.news-card img{aspect-ratio:1.5}.brandspot-story,.mobile-standard{display:none}.ad-slot{display:none}body[data-mode="with-ad"] .ad-slot{display:block}
 }
 
 /* Desktop rail widths track the historical 682 / 333 / 333 composition. */
 @media (min-width:1051px){
   .news-grid{grid-template-columns:minmax(0,2.05fr) minmax(0,1fr) minmax(0,1fr);gap:18px}
-  .secondary-grid{gap:12px}.story-card h2{font-size:17px}
+  .secondary-grid{gap:12px;border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}.story-card h2{font-size:17px}
   .latest-panel{min-width:0}.latest-list{gap:18px}.news-card{display:none}.news-card img{aspect-ratio:1.5}.brandspot-story{display:none}
   body[data-mode="with-ad"] .news-card:nth-child(-n+2),body[data-mode="subscribers-lite"] .news-card:nth-child(-n+3),body[data-mode="brandspot-lite"] .news-card:nth-child(-n+2),body[data-mode="brandspot-lite"] .brandspot-story{display:grid}
   body[data-mode="brandspot-lite"] .brandspot-story{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:8px;align-items:start}
@@ -118,8 +117,9 @@ img{display:block;max-width:100%;object-fit:cover}
   body[data-mode="brandspot-lite"] .brandspot-story img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover}
   body[data-mode="brandspot-lite"] .brandspot-story .eyebrow,body[data-mode="brandspot-lite"] .brandspot-story h3,body[data-mode="brandspot-lite"] .brandspot-story .story-meta{grid-column:2;min-width:0}
   body[data-mode="brandspot-lite"] .brandspot-story .eyebrow{font-size:10px;margin-top:2px}
-   body[data-mode="brandspot-lite"] .brandspot-story h3{font-size:15px;line-height:1.15}
-   body[data-mode="brandspot-lite"] .brandspot-story .story-meta{font-size:10px;margin-top:4px}
+    body[data-mode="brandspot-lite"] .brandspot-story h3{font-size:15px;line-height:1.15}
+    body[data-mode="brandspot-lite"] .brandspot-story .story-meta{font-size:10px;margin-top:4px}
+  body[data-mode="with-ad"] .news-card:nth-child(2),body[data-mode="subscribers-lite"] .news-card:nth-child(n+2):nth-child(-n+3),body[data-mode="brandspot-lite"] .news-card:nth-child(n+2):nth-child(-n+4){margin-top:-9px;border-top:1px solid var(--line);padding-top:9px}
    .premium-list .compact-story{grid-template-columns:minmax(0,42%) minmax(0,1fr)}
    .premium-list .compact-story>img{width:100%;height:auto;aspect-ratio:1.5}
    .premium-list .compact-story h3{font-size:15px;line-height:1.15}
