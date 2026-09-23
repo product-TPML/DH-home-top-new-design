@@ -2,8 +2,10 @@
 
 This is a static HTML/CSS/JavaScript homepage prototype.
 
-- `index.html` owns page structure, story content, and the three preview modes.
-- `mobile-fix.css` contains the authoritative responsive layout and desktop mode matrix.
-- `script.js` switches preview modes, applies the desktop With Ad baseline to Lite modes, and synchronizes rail heights.
-- Desktop mode differences are isolated to the middle rail: story visibility, ad visibility, Brandspot card layout, and middle-rail dividers.
-- Tablet and mobile layouts use the existing responsive `news-grid` and are not affected by desktop-only mode rules.
+- `index.html` contains one semantic content tree for all viewports, story content, navigation, menu, and preview-mode controls.
+- `styles.css` is the sole stylesheet. It owns responsive layout at `<=700px`, `701–1050px`, and `>=1051px`, as well as `body[data-mode]` presentation.
+- `script.js` updates preview-mode state and accessible menu interactions, including `aria-expanded`, focus entry/return, and Escape handling. It does not reparent story nodes, measure layout, use `ResizeObserver`, or respond to breakpoints.
+- Desktop middle-rail modes show two regular stories plus an ad (With Ad), three regular stories without an ad (Subscribers Lite), or two regular stories followed by two compact, image-left Brandspot stories without an ad (Brandspot Lite).
+- On mobile, only With Ad shows the ad after the hero; both Lite modes are ad-free.
+- All editorial story images display at 3:2 with `object-fit: cover`; ad creative and branding icons retain their own proportions. The Perspective quote card is not part of the page.
+- Retained assets include `300x250.png`, `premium-icon.png`, `premium-icon.svg`, and the existing editorial imagery referenced by `index.html`.

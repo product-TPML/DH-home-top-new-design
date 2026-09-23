@@ -2,84 +2,57 @@
 
 ## Project
 
-This is a greenfield static prototype for the English-language Deccan Herald homepage top section. It uses plain HTML, CSS, and JavaScript.
+This is a static prototype for the English-language Deccan Herald homepage top section, implemented with plain HTML, CSS, and JavaScript. Prajavani screenshots were used only as references for responsive composition and ad behavior; DH branding, English navigation, and DH-specific content remain the source of truth.
 
-Prajavani screenshots were used only as references for responsive composition and ad behavior. DH branding, English navigation, and DH-specific content remain the source of truth.
-
-Typography:
+Typography intent:
 
 - Playfair Display for editorial headings.
 - Roboto Slab for body copy, navigation, categories, metadata, and controls.
 - Text is black unless it is part of the DH masthead, Premium header, or another intentional colored UI element.
 
-## Current Layout
+## Content and layout
+
+`index.html` contains one semantic content tree used at every viewport. CSS presents it as a three-column editorial layout on desktop and a responsive grid/stack on tablet and mobile. Story content and order do not change through DOM movement.
 
 ### Desktop
 
-The desktop view uses an explicit three-column editorial dashboard in `.desktop-wireframe`:
-
-1. Main story column:
-   - One hero story with category, headline, subheading, and timestamp integrated into the lower image gradient.
-   - Two non hero stories stories beneath the hero.it should contain headline, category label and timestamp.
-2. Middle rail:
-   - Middle-rail stories contain only an image, headline, category label, and timestamp.
-   - With Ad: two non-hero stories, followed by a 300 × 250 ad slot beneath them.
-   - Ad Lite for Subscribers: no ad; show three non-hero stories, with the added story using the same layout as the other two.
-   - Ad Lite for Brandspot: no ad; show two brand stories side by side, each with an image and its story content.
-3. Premium rail:
-   - Premium header with the supplied premium icon PNG.
-   - One hero Premium story with category, headline with premium icon at the satrting, subheading, and timestamp integrated into the lower image gradient.
-   - Four non hero Premium stories, it should contain  image, headline with premium icon at the statrting, category label, and timestamp.
-   - Premium CTA anchored inside the bottom of the Premium rail.
-
+- Main story column: one hero story with category, headline, subheading, and timestamp integrated into the lower image gradient; two non-hero stories with headline, category, and timestamp.
+- Middle rail stories contain an image, headline, category, and timestamp. With Ad shows two regular stories followed by the 300 × 250 ad; Subscribers Lite shows three regular stories and no ad; Brandspot Lite shows the first two regular stories followed by two smaller image-left Brandspot stories, stacked one below the other, and no ad.
+- Premium rail: supplied Premium icon, one featured story with category, headline, subheading, and timestamp, four non-hero stories, and a Premium CTA.
 
 ### Mobile
 
-- Mobile-first stacked layout.
-- Hero story appears first with the headline integrated into the image treatment same set of details as desktop.
-- add the ad slot right after the hero story
-- Four non hero stories appear in the mobile sequence with side by side image and content (content is same as desktop)
-- The second ad appears between standard content and Premium content only in With Ad mode.
-- Premium content follows with one hero story plus 2 non hero stories.
-## Ad Behavior
+- Stacked layout with the lead hero first and the headline integrated into the image treatment.
+- With Ad shows the ad after the hero. Subscribers Lite and Brandspot Lite are ad-free on mobile.
+- Four non-hero stories follow in the mobile news sequence, with image and content side by side.
+- Premium follows the news content with one hero and two non-hero stories.
 
-The floating bottom-right mode switcher supports three desktop middle-rail scenarios:
+## Mode and responsive behavior
 
-- `With Ad`: displays two non-hero stories, then `300x250.png` beneath them.
-- `Ad Lite for Subscribers`: hides the ad and displays a third non-hero story in the same layout as the other two.
-- `Ad Lite for Brandspot`: hides the ad and displays two brand stories side by side, with image and story content for each.
+The in-flow mode toolbar selects `With Ad`, `Ad Lite for Subscribers`, or `Ad Lite for Brandspot`. Mode state is represented by `body[data-mode]`. CSS owns mode visibility and responsive presentation; `script.js` only updates mode state and accessible menu interactions. Breakpoints are mobile `<=700px`, tablet `701–1050px`, and desktop `>=1051px`.
 
-Every middle-rail story displays only its image, headline, category label, and timestamp. The ad state must not change the main editorial story order. On mobile, the ad is part of the normal stacked flow.
+On desktop, the three modes alter only the middle rail; the main editorial order remains unchanged. On mobile, only With Ad displays the ad after the hero, while both Lite modes are ad-free.
 
-## Image and Card Rules
+## Image and card rules
 
-- News and Premium images use consistent `1.5`-style editorial aspect ratios with `object-fit: cover` where appropriate.
-- Premium compact images are 110 × 73 desktop-style thumbnails in the compact viewport layer and 96 × 64 on mobile.
-- Premium featured imagery uses the same consistent ratio as other Premium imagery.
-- Corner radii are 4px or smaller where the final layout requires square editorial edges.
-- Premium cards must remain clean and content-driven; avoid flex stretching that creates artificial gaps.
+- Every editorial story image—hero, first-column non-hero, middle-rail, Brandspot, Premium featured, and Premium compact—uses a responsive displayed 3:2 aspect ratio with `object-fit: cover`.
+- This 3:2 contract excludes the supplied `300x250.png` advertisement and Premium branding icons.
+- Corner radii are 4px or smaller where the layout requires square editorial edges.
+- Premium cards remain clean and content-driven; avoid flex stretching that creates artificial gaps.
 
-## Files
+## Files and assets
 
-- `index.html` — page structure, story content, navigation, ad controls, menu markup, and explicit desktop wireframe.
-- `styles.css` — original prototype styles and legacy layout rules.
-- `mobile-fix.css` — authoritative responsive overrides, desktop geometry, typography, Premium styling, and viewport-fit rules.
-- `script.js` — ad-state switcher, hamburger menu, and breakpoint-aware story placement.
+- `index.html` — semantic page structure, story content, navigation, mode controls, and menu markup.
+- `styles.css` — sole stylesheet for shared, responsive, and mode-specific presentation.
+- `script.js` — preview-mode state and accessible menu interactions; no story reparenting or layout measurement.
 - `300x250.png` — supplied advertisement creative.
-- `premium-icon.png` / `premium-icon.svg` — Premium branding assets; the PNG is used by the current desktop Premium header.
+- `premium-icon.png` and `premium-icon.svg` — supplied Premium branding assets.
+- Existing editorial imagery is referenced by `index.html`.
 
-When changing the layout, prefer updating the final responsive rules in `mobile-fix.css`. Avoid creating another competing stylesheet layer unless the change cannot be expressed in the existing responsive overrides.
-
-## Preview and Git
+## Preview
 
 The local static server is available at:
 
 `http://127.0.0.1:8002/`
 
-Use a cache-busting query string such as `?v=58` when previewing CSS or HTML changes.
-
-The project is now a local Git repository. The initial layout commit is:
-
-`ab6912c Implement responsive DH homepage layout`
-
-
+Use a cache-busting query string when previewing CSS or HTML changes.
