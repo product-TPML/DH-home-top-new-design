@@ -18,7 +18,7 @@ Typography intent:
 
 - Main story column: one hero story with a 3:2 image and a dark gradient transition into the category, headline, subheading, and timestamp below the image; two non-hero stories with headline, category, and timestamp.
 - Middle rail stories contain an image, headline, category, and timestamp. With Ad shows two regular stories followed by the 300 × 250 ad; Subscribers Lite shows three regular stories and no ad; Brandspot Lite shows the first two regular stories followed by two smaller image-left Brandspot stories, stacked one below the other, and no ad.
-- Premium rail: supplied Premium icon, one featured story with a 3:2 image and copy below on a dark Premium-burgundy surface connected to the image by a gradient, five non-hero stories as horizontal compact cards with image left and text right, and a Premium CTA with a 3px radius. Desktop compact thumbnails are 3:2 and at least 40% of their card width.
+- Premium rail: supplied Premium icon, one featured story with a 3:2 image and copy below on a dark Premium-burgundy surface connected to the image by a gradient, five non-hero stories as horizontal compact cards with image left and text right, and a Premium CTA with a 3px radius. Every Premium article headline starts with the supplied Nandi badge (`premium-icon.png`), sized to one text line; wrapped lines start flush at the heading edge below it. Desktop compact thumbnails are 3:2 and at least 40% of their card width.
 - On desktop, the middle and Premium rails stretch with CSS to the main-column height when content fits, and the Premium CTA is anchored at the bottom. If content needs more room, the grid may grow rather than clip.
 
 ### Mobile
