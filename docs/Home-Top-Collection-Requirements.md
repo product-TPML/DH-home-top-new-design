@@ -34,7 +34,7 @@ The reader sees a different version of Home Top depending on who they are. Subsc
 | DH | Subscribers | Subscribers | No | Freed ad space is given to one more Top Stories story |
 | DH | Brandspot | Non-subscribers | No | Instead of the ad, two sponsored Brandspot stories are shown. Enabled by ad ops |
 | PV | With Ad | Non-subscribers | Yes | Default version |
-| PV | Subscribers | Subscribers | No | Freed ad space is given to more Premium stories |
+| PV | Subscribers | Subscribers | No | No ad; Premium leads with a hero story, which With Ad does not show on desktop |
 
 PV has no Brandspot variation.
 
@@ -235,19 +235,20 @@ Read time is the number of minutes provided by the CMS API. Home Top shows it as
 | 2 minutes or more | "6 min read" | "6 min" * | "6 ನಿಮಿಷ ಓದು" | "6 ನಿ. ಓದು" |
 
 The wording is the same for 1 minute and for 2 or more; there is no singular or plural change.
+
 ### 5.3 Where the long and short forms are shown
 
 These rules apply to both the time labels (5.1) and the read time labels (5.2). The two always use the same form on the same screen.
 
 - **DH:** the long form on desktop (1024 px and wider); the short form on tablet (701 to 1023 px) and mobile (700 px and below). The prototype shows only the long form today, so the short form is new.
 - **PV:** the short form on desktop and mobile.
-- **Layout:** the time stays on one line and the read time sits on the right. In narrow cards the two can wrap onto separate lines.
+- **Layout:** on both brands the time can wrap onto a second line when it does not fit, and the read time sits on the right.
 
 ### 5.4 Common to both brands
 
-- Every story image is 3:2.
+- Every story image is 3:2, except the round Subhashita image.
 - Every Premium story is marked with the Premium badge before its headline.
-- The meta line appears on every story, including hero stories.
+- The meta line appears on every story, including hero stories. The Subhashita card has none.
 
 ## 6. Editor requirements (CMS)
 

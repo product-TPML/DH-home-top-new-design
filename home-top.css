@@ -33,7 +33,7 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
 .hero-copy .story-meta,.story-card .story-meta,.news-card .story-meta{font-size:14px}
 /* Meta row: relative time on the left, read-time (icon + text) aligned right */
 .story-meta,.pv-meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.meta-time{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta-time{min-width:0}
 .read-time{display:inline-flex;align-items:center;gap:4px;flex:none;white-space:nowrap}
 .read-time::before{content:"";width:1em;height:1em;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1C4.13438 1 1 4.13438 1 8C1 11.8656 4.13438 15 8 15C11.8656 15 15 11.8656 15 8C15 4.13438 11.8656 1 8 1ZM8 13.8125C4.79063 13.8125 2.1875 11.2094 2.1875 8C2.1875 4.79063 4.79063 2.1875 8 2.1875C11.2094 2.1875 13.8125 4.79063 13.8125 8C13.8125 11.2094 11.2094 13.8125 8 13.8125Z'/%3E%3Cpath d='M10.7297 9.97812L8.50156 8.36719V4.5C8.50156 4.43125 8.44531 4.375 8.37656 4.375H7.625C7.55625 4.375 7.5 4.43125 7.5 4.5V8.80313C7.5 8.84375 7.51875 8.88125 7.55156 8.90469L10.1359 10.7891C10.1922 10.8297 10.2703 10.8172 10.3109 10.7625L10.7578 10.1531C10.7984 10.0953 10.7859 10.0172 10.7297 9.97812Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1C4.13438 1 1 4.13438 1 8C1 11.8656 4.13438 15 8 15C11.8656 15 15 11.8656 15 8C15 4.13438 11.8656 1 8 1ZM8 13.8125C4.79063 13.8125 2.1875 11.2094 2.1875 8C2.1875 4.79063 4.79063 2.1875 8 2.1875C11.2094 2.1875 13.8125 4.79063 13.8125 8C13.8125 11.2094 11.2094 13.8125 8 13.8125Z'/%3E%3Cpath d='M10.7297 9.97812L8.50156 8.36719V4.5C8.50156 4.43125 8.44531 4.375 8.37656 4.375H7.625C7.55625 4.375 7.5 4.43125 7.5 4.5V8.80313C7.5 8.84375 7.51875 8.88125 7.55156 8.90469L10.1359 10.7891C10.1922 10.8297 10.2703 10.8172 10.3109 10.7625L10.7578 10.1531C10.7984 10.0953 10.7859 10.0172 10.7297 9.97812Z'/%3E%3C/svg%3E") center/contain no-repeat}
 .secondary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
@@ -78,7 +78,7 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
 .premium-cta{display:block;flex:none;padding:10px;text-align:center;text-decoration:none;background:#f6c936;border-radius:3px;font-size:16px;font-weight:700}
 
 /* Mobile: natural reading order; only the first two More News cards join the supports. */
-@media (max-width:700px){
+@media (max-width:1023px){
   body{min-width:0}
   body[data-mode="with-ad"] .mobile-secondary-ad{display:block;order:9}
   .shell{width:calc(100% - 20px)}.preview-floaters span{display:none}.mode-button{font-size:11px;padding:7px 10px}
@@ -98,10 +98,9 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
   .premium-feature .story-meta{padding:0 12px 12px;color:#eee}
  }
 
-/* Tablet uses the same source order and a constrained two-column content grid. */
+/* Tablet follows the mobile layout and order; only the side margins differ. */
 @media (min-width:701px) and (max-width:1023px){
-  .secondary-grid{border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}
-  .shell{width:calc(100% - 44px)}.news-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}.lead-column{grid-column:1;grid-row:1}.latest-panel{grid-column:2;grid-row:1;min-width:0}.right-rail{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:20px;align-items:start}.premium-panel{grid-column:2}.desktop-premium-story{display:none}.latest-list{gap:12px}.base-secondary{margin-top:-6px;border-top:1px solid var(--line);padding-top:6px}.news-card img{aspect-ratio:1.5}.brandspot-story,.mobile-standard{display:none}.ad-slot{display:none}body[data-mode="with-ad"] .ad-slot{display:block}.premium-feature{background:#000;color:#fff;border-radius:3px;overflow:hidden}.premium-feature>a{position:relative}.premium-feature>a:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#000);pointer-events:none}.premium-feature>.eyebrow{margin:0;padding:10px 12px 0;color:#00b3cc}.premium-feature h2{padding:0 12px;margin:4px 0;color:#fff}.premium-feature p{padding:0 12px;color:#f1e8e6}.premium-feature .story-meta{padding:0 12px 12px;color:#eee}
+  .shell{width:calc(100% - 44px)}
 }
 
 /* The featured Premium story card itself uses the same black treatment as the lead story. */
@@ -114,8 +113,8 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
 @media (min-width:1024px){
   .news-grid{grid-template-columns:minmax(0,1.52fr) minmax(0,1fr) minmax(0,1fr);gap:20px}.right-rail{display:flex;flex-direction:column;min-height:0}
   .secondary-grid{gap:12px;border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}.story-card h2{font-size:16px}
-  .latest-panel{min-width:0;display:flex;flex-direction:column}.latest-list{display:flex;flex:1;flex-direction:column;justify-content:space-between;gap:0}.news-card{display:none}.news-card img{aspect-ratio:1.8}.brandspot-story{display:none}
-  body[data-mode="with-ad"] .base-primary,body[data-mode="with-ad"] .base-secondary,body[data-mode="subscribers-lite"] .base-primary,body[data-mode="subscribers-lite"] .base-secondary,body[data-mode="subscribers-lite"] .brandspot-primary,body[data-mode="brandspot-lite"] .base-primary,body[data-mode="brandspot-lite"] .base-secondary,body[data-mode="brandspot-lite"] .brandspot-story{display:grid}
+  .latest-panel{min-width:0;display:flex;flex-direction:column}.latest-list{display:flex;flex:1;flex-direction:column;justify-content:space-between;gap:0}.news-card{display:none}.news-card img{aspect-ratio:1.5}.brandspot-story{display:none}
+  body[data-mode="with-ad"] .base-primary,body[data-mode="with-ad"] .base-secondary,body[data-mode="subscribers-lite"] .base-primary,body[data-mode="subscribers-lite"] .base-secondary,body[data-mode="subscribers-lite"] .subscriber-story,body[data-mode="brandspot-lite"] .base-primary,body[data-mode="brandspot-lite"] .base-secondary,body[data-mode="brandspot-lite"] .brandspot-story{display:grid}
   body[data-mode="with-ad"] .base-primary + .latest-divider,body[data-mode="with-ad"] .base-secondary + .latest-divider,body[data-mode="subscribers-lite"] .base-primary + .latest-divider,body[data-mode="subscribers-lite"] .base-secondary + .latest-divider,body[data-mode="brandspot-lite"] .base-primary + .latest-divider,body[data-mode="brandspot-lite"] .base-secondary + .latest-divider,body[data-mode="brandspot-lite"] .brandspot-primary + .latest-divider{display:block;position:relative;flex:1;min-height:18px}
   .latest-divider:after{content:"";position:absolute;inset:50% 0 auto;border-top:1px solid var(--line)}
   body[data-mode="brandspot-lite"] .brandspot-story{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:8px;align-items:start}
@@ -344,8 +343,8 @@ body[data-pv-mode="with-ad"] .pv-premium-extra{display:none}
   .pv-subhashita-title{justify-content:center}
 }
 
-/* DH mobile metadata spans the card below its image and headline. */
-@media (max-width:700px){
+/* DH mobile and tablet metadata spans the card below its image and headline. */
+@media (max-width:1023px){
   .hero-copy{padding-bottom:8px}
   .story-card,.news-card{padding-bottom:8px}
   .story-card>a,.news-card>a{grid-row:1/span 2}
@@ -358,7 +357,7 @@ body[data-pv-mode="with-ad"] .pv-premium-extra{display:none}
   .compact-story .story-meta{grid-column:1/-1;grid-row:3;align-self:end;margin-top:6px}
 }
 /* DH desktop metadata uses a full-width bottom row, including thumbnail stories. */
-@media (min-width:701px){
+@media (min-width:1024px){
   .hero-copy{padding-bottom:0}
   .story-card,.premium-feature{display:flex;flex-direction:column}
   .story-card>.story-meta,.premium-feature>.story-meta{margin-top:auto;padding-top:6px}
@@ -411,8 +410,8 @@ body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+4){display:none}
   .pv-premium-body{padding-top:0;padding-bottom:12px;gap:0}
   .pv-premium-cta{margin-top:0}
 }
-/* Balance every DH mobile story with equal top and bottom padding. */
-@media (max-width:700px){
+/* Balance every DH mobile and tablet story with equal top and bottom padding. */
+@media (max-width:1023px){
   .hero-copy,.story-card,.news-card,.premium-feature,.compact-story{padding-top:12px;padding-bottom:12px}
   .premium-panel{padding-bottom:12px;gap:0}
   .premium-heading{margin-bottom:0}
