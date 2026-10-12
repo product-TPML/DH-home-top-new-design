@@ -284,7 +284,6 @@ body[data-pv-mode="with-ad"] .pv-ad{display:block}
   .pv-middle-panel,.pv-middle-stories{gap:10px}
   .pv-subhashita{padding:10px;gap:10px}
   .pv-avatar-ring{width:64px;height:64px}
-  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+4){display:none}
   .pv-middle-panel{flex:1}
   .pv-middle-stories{flex:1;justify-content:flex-start}
   .pv-middle-stories>article,.pv-premium-body>article{flex:1 0 auto}
@@ -295,10 +294,6 @@ body[data-pv-mode="with-ad"] .pv-ad{display:block}
   .pv-premium-cta{flex:none}
 }
 
-/* --- PV responsive --- */
-/* Narrow desktop rails need fewer Premium cards to fit the lead column. */
-@media (min-width:1024px) and (max-width:1200px){
-  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+3),body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+5){display:none}
 }
 /* Keep desktop timestamps and reading time anchored to opposite edges. */
 @media (min-width:701px){
@@ -389,15 +384,14 @@ body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+4){display:none}
 @media (max-width:700px){
   body[data-pv-mode="with-ad"] .pv-mobile-main-ad{display:block}
 }
-/* Fit a fourth PV With Ad premium story on desktops without adding block height. */
-@media (min-width:1280px){
+/* PV With Ad shows 4 Premium stories at every desktop width; tighter spacing keeps the column height close to the main column. */
+@media (min-width:1024px){
   body[data-pv-mode="with-ad"] .pv-premium-body{padding-top:8px;padding-bottom:8px;gap:4px}
   body[data-pv-mode="with-ad"] .pv-premium-row{padding-top:4px}
-  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(4){display:grid}
   body[data-pv-mode="with-ad"] .pv-premium-cta{margin-top:0}
 }
-/* Show a third PV Ad Lite premium story on wider desktops (matches DH's count). */
-@media (min-width:1280px){
+/* PV Subscribers shows a Premium hero + 3 stories at every desktop width (matches DH). */
+@media (min-width:1024px){
   body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(4){display:grid}
 }
 /* Balance PV mobile story spacing without stacking container gaps and padding. */

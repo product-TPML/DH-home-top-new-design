@@ -138,7 +138,7 @@ Every story, including the hero, shows a Story Section. Premium always has a hea
 - Right column, top to bottom:
   1. Ad
   2. Premium heading
-  3. Premium non-hero stories 1 to 4 (3 from 1201 to 1279 px, 2 from 1024 to 1200 px). With Ad shows no Premium hero story on desktop
+  3. 4 Premium non-hero stories. With Ad shows no Premium hero story on desktop
   4. Premium call-to-action
 
 **Subscribers, desktop** (three columns)
@@ -156,7 +156,7 @@ Every story, including the hero, shows a Story Section. Premium always has a hea
 - Right column (no ad), top to bottom:
   1. Premium heading
   2. Premium hero story
-  3. 3 Premium non-hero stories (2 below 1280 px)
+  3. 3 Premium non-hero stories
   4. Premium call-to-action
 
 **With Ad, mobile** (single column, top to bottom)
