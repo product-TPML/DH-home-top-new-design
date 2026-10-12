@@ -1,32 +1,95 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-publication="deccan-herald" data-color-mode="print-scan">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Deccan Herald — Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ಪ್ರಜಾವಾಣಿ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Roboto+Slab:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=css-refactor-1">
+  <link rel="stylesheet" href="home-top.css">
 </head>
-<body data-mode="subscribers-lite" data-site="dh" data-pv-mode="with-ad">
-  <div class="site-toggle" role="group" aria-label="Publication"><span>Design</span><button class="site-button active" type="button" data-site="dh" aria-pressed="true">DH</button><button class="site-button" type="button" data-site="pv" aria-pressed="false">PV</button></div>
+<body class="is-dh" data-mode="with-ad" data-pv-mode="with-ad">
   <header class="site-header">
-    <div class="dh-masthead"><div class="dh-header-inner">
-      <a class="dh-logo" href="#" aria-label="Deccan Herald home"><strong>DH</strong><small>DECCAN HERALD</small></a>
-      <nav class="dh-main-nav" aria-label="Primary navigation"><a href="#">India</a><i>|</i><a href="#">Karnataka</a><i>|</i><a href="#">Premium</a><i>|</i><a href="#">Opinion</a><i>|</i><a href="#">World</a><i>|</i><a href="#">Business</a><i>|</i><a href="#">Sports</a><i>|</i><a href="#">Video</a><i>|</i><a href="#">Entertainment</a></nav>
-      <div class="dh-actions"><button class="dh-subscribe">▣&nbsp; Subscribe</button><button class="dh-action-icon" aria-label="Login">◉</button><button class="dh-action-icon" aria-label="Search" id="searchButton" aria-controls="dhMenuPanel" aria-expanded="false">☷⌕</button><button class="dh-action-icon" aria-label="Open menu" id="menuButton" aria-controls="dhMenuPanel" aria-expanded="false">☰</button></div>
-    </div></div>
-    <div class="dh-subnav"><div class="dh-subnav-inner"><nav aria-label="Section navigation"><a href="#">Politics</a><a href="#">Bengaluru</a><a href="#">Features</a><a href="#">Health</a><a href="#">Education</a><a href="#">Technology</a><a href="#">DH Brandspot</a></nav></div></div>
+    <div class="site-header__inner">
+      <div class="site-header__top">
+        <a href="#" class="site-header__logo" aria-label="ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ">
+          <img class="site-header__logo-image" src="assets/prajavani-logo.svg" alt="ಪ್ರಜಾವಾಣಿ">
+        </a>
+
+        <nav class="site-header__primary" aria-label="ಮುಖ್ಯ ವಿಭಾಗಗಳು">
+          <span class="site-header__api-menu-status" data-api-menu-status="default" aria-live="polite">ವಿಭಾಗಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</span>
+        </nav>
+
+        <form class="site-header__search" role="search">
+          <input class="site-header__search-input" type="search" placeholder="ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಹುಡುಕಿ..." aria-label="ಹುಡುಕಿ">
+          <a href="#" class="site-header__primary-premium"><span data-icon="crown"></span><span>ಪ್ರೀಮಿಯಂ</span></a>
+          <a href="#" class="site-header__epaper" aria-label="E-paper">
+            <span data-icon="paper"></span>
+            <span class="site-header__epaper-label">ಇ-ಪೇಪರ್</span>
+          </a>
+          <button class="site-header__search-submit" type="submit" aria-label="ಹುಡುಕಾಟ ಸಲ್ಲಿಸಿ">
+            <span data-icon="search"></span>
+          </button>
+        </form>
+
+        <div class="site-header__actions">
+          <a href="#" class="site-header__subscribe">
+            <span data-icon="crown"></span>
+            <span class="site-header__subscribe-label">ಚಂದಾದಾರರಾಗಿ</span>
+          </a>
+          <a href="#" class="site-header__mobile-epaper" aria-label="E-paper">
+            <span data-icon="paper"></span>
+            <span class="site-header__epaper-label">ಇ-ಪೇಪರ್</span>
+          </a>
+          <button class="site-header__icon-btn site-header__profile" type="button" aria-label="ಲಾಗಿನ್">
+            <span data-icon="user"></span>
+            <span class="site-header__profile-badge" aria-hidden="true"><span data-icon="crown"></span></span>
+          </button>
+          <button class="site-header__icon-btn" type="button" data-open-drawer aria-label="ಮೆನು ತೆರೆಯಿರಿ">
+            <span data-icon="menu"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="site-header__secondary" data-menu-group="subscription-and-secondary">
+      <nav class="site-header__utility" aria-label="ಪ್ರೀಮಿಯಂ ಸೇವೆಗಳು">
+        <a href="#" class="site-header__utility-link site-header__utility-link--highlight">
+          <span data-icon="crown"></span>
+          <span>ಪ್ರೀಮಿಯಂ</span>
+        </a>
+        <a href="#" class="site-header__utility-link">
+          <span data-icon="paper"></span>
+          <span>ಇ-ಪೇಪರ್</span>
+        </a>
+        <a href="#" class="site-header__utility-link">
+          <span data-icon="book"></span>
+          <span>ಸುಧಾ</span>
+        </a>
+        <a href="#" class="site-header__utility-link">
+          <span data-icon="map"></span>
+          <span>ಮಯೂರ</span>
+        </a>
+      </nav>
+
+      <div class="site-header__topics-shell" data-mobile-menu-source="default" data-desktop-menu-source="secondary-menu">
+        <nav class="site-header__topics" aria-label="ವಿಭಾಗಗಳು">
+        <div class="site-header__premium-group">
+          <a href="#" class="site-header__topic-premium"><span data-icon="crown"></span><span>ಪ್ರೀಮಿಯಂ</span></a>
+          <a href="#" class="site-header__topic-epaper"><span data-icon="paper"></span><span>ಇ-ಪೇಪರ್</span></a>
+          <a href="#" class="site-header__topic-premium-extra"><span data-icon="book"></span><span>ಸುಧಾ</span></a>
+          <a href="#" class="site-header__topic-premium-extra"><span data-icon="map"></span><span>ಮಯೂರ</span></a>
+        </div>
+        <span class="site-header__api-menu-status" data-api-menu-status="secondary-menu" aria-live="polite">ವಿಭಾಗಗಳನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ...</span>
+        </nav>
+      </div>
+      </div>
+    </div>
   </header>
-  <section class="dh-menu-panel" id="dhMenuPanel" aria-label="Search and site menu" hidden>
-    <div class="dh-menu-top"><a class="dh-menu-logo" href="#">DH</a><label class="dh-search-box"><span>Search for News, Photos and Videos</span><input aria-label="Search"><b>⌕</b></label><button id="closeMenu" aria-label="Close menu">×</button></div>
-    <div class="dh-menu-grid"><nav><a href="#">India</a><a href="#">World</a><a href="#">Entertainment</a><a href="#">Health</a></nav><nav><a href="#">Karnataka</a><a href="#">Business</a><a href="#">Politics</a><a href="#">Education</a></nav><nav><a href="#">Premium</a><a href="#">Sports</a><a href="#">Bengaluru</a><a href="#">Technology</a></nav><nav><a href="#">Opinion</a><a href="#">Video</a><a href="#">Features</a><a href="#">DH Brandspot</a></nav><div class="dh-menu-actions"><button>Login</button><button>Read ePaper</button><button>Subscribe to Newsletters</button></div></div>
-    <div class="dh-menu-footer"><strong>Follow Us</strong><p>◉ &nbsp; f &nbsp; 𝕏 &nbsp; ◎ &nbsp; ▶ &nbsp; ➤</p><strong>Contact Us</strong><p>support@deccanherald.com &nbsp; +91 9035267305</p></div>
-  </section>
-  <main class="shell page-wrap">
-    <div class="story-toolbar floating-mode-toolbar" role="group" aria-label="Main story selection"><span>Main story</span><button class="story-button active" type="button" data-story="rahul" aria-pressed="true">UPI tax</button><button class="story-button" type="button" data-story="onion" aria-pressed="false">Onion prices</button><button class="story-button" type="button" data-story="navy" aria-pressed="false">Navy collision</button><button class="story-button" type="button" data-story="rtc" aria-pressed="false">RTC reform</button><button class="story-button" type="button" data-story="pets" aria-pressed="false">Pet dogs</button></div>
-    <div class="mode-toolbar floating-mode-toolbar" role="group" aria-label="Middle rail display mode"><span>Preview mode</span><button class="mode-button" type="button" data-mode="with-ad" aria-pressed="false">With Ad</button><button class="mode-button active" type="button" data-mode="subscribers-lite" aria-pressed="true">Ad Lite for Subscribers</button><button class="mode-button" type="button" data-mode="brandspot-lite" aria-pressed="false">Ad Lite for Brandspot</button></div>
+
+  <main class="page">
+    <div class="shell page-wrap">
     <div class="news-grid">
       <section class="lead-column" aria-labelledby="lead-heading">
         <article class="hero-story"><a class="hero-image-wrap" href="https://www.deccanherald.com/india/stop-lying-down-in-front-of-trump-have-a-spine-rahul-gandhi-attacks-pm-modi-over-upi-tax-4148033"><img src="article-images/rahul-upi.jpg" alt="Rahul Gandhi speaking about UPI charges"></a><div class="hero-copy"><h1 id="lead-heading">‘Stop lying down in front of Trump, have a spine’: Rahul Gandhi attacks PM Modi over ‘UPI tax’</h1><p class="hero-subheading">‘Modi ji, rollback the UPI tax. Now,’ said Rahul Gandhi in a post on X.</p><div class="story-meta"><span class="meta-time">30 minutes ago</span><span class="read-time">6 min read</span></div></div></article>
@@ -57,24 +120,10 @@
         </div><a class="premium-cta" href="#">Explore all premium stories →</a>
       </section></aside>
     </div>
-  </main>
+    </div>
 
-  <div class="pv-root">
-    <header class="pv-header">
-      <div class="pv-masthead"><div class="pv-header-inner">
-        <a class="pv-logo" href="#" aria-label="Prajavani home"><strong>ಪ್ರಜಾವಾಣಿ</strong><small>ಕನ್ನಡಿಗರ ಅಚ್ಚುಮೆಚ್ಚಿನ ಸುದ್ದಿಮಾಧ್ಯಮ</small></a>
-        <nav class="pv-main-nav" aria-label="Primary navigation"><a href="#">ಇ-ಪೇಪರ್</a><a href="#">ಜಿಲ್ಲೆ</a><a href="#">ಸುದ್ದಿ</a><a href="#">ಸಿನಿಮಾ ರಂಜನೆ</a><a href="#">ಅಭಿಮತ</a><a href="#">ವಾಸ್ತು-ಜ್ಯೋತಿಷ್ಯ</a><a href="#">ಸಮಗ್ರ ಮಾಹಿತಿ</a></nav>
-        <div class="pv-actions"><button class="pv-action-icon" aria-label="Search">⌕</button><button class="pv-subscribe">▣&nbsp; ಚಂದಾದಾರರಾಗಿ</button><button class="pv-action-icon" aria-label="Login">◉</button><button class="pv-action-icon" aria-label="Open menu">☰</button></div>
-      </div></div>
-      <div class="pv-subnav"><div class="pv-subnav-inner"><span class="pv-subnav-flag" aria-hidden="true">📢</span><nav aria-label="Section navigation"><a href="#">ಪದಬಂಧ</a><a href="#">ಕ್ರೀಡೆ</a><a href="#">ಭೂಮಿಕಾ</a><a href="#">ಸಹಪಾಠಿ</a><a href="#">ಕೃಷಿ ದರ್ಶನ</a><a href="#">ಹೊರನಾಡ ಕನ್ನಡಿಗರು</a></nav></div></div>
-    </header>
-
-    <main class="pv-shell">
-      <div class="pv-mode-toolbar" role="group" aria-label="ಜಾಹೀರಾತು ಮೋಡ್">
-        <span>ಜಾಹೀರಾತು</span>
-        <button class="pv-mode-button active" type="button" data-pv-mode="with-ad" aria-pressed="true">With Ad</button>
-        <button class="pv-mode-button" type="button" data-pv-mode="ad-lite" aria-pressed="false">Ad Lite</button>
-      </div>
+    <div class="pv-root">
+      <div class="pv-shell">
       <div class="pv-grid">
         <section class="pv-lead" aria-labelledby="pv-lead-heading">
           <article class="pv-hero">
@@ -136,9 +185,449 @@
         </aside>
         </div>
       </div>
-    </main>
+      </div>
+    </div>
+  </main>
+
+  <div class="preview-floaters">
+    <div class="mode-toolbar" role="group" aria-label="Non-subscriber display mode"><span>Non-subscriber</span><button class="mode-button active" type="button" data-mode="with-ad" aria-pressed="true">With Ad</button><button class="mode-button" type="button" data-mode="brandspot-lite" aria-pressed="false">Brandspot</button></div>
   </div>
 
-  <script src="script.js"></script>
+  <nav class="mobile-bottomnav" aria-label="ಕೆಳ ನ್ಯಾವಿಗೇಶನ್">
+    <a href="#" class="mobile-bottomnav__item is-active">
+      <span class="mobile-bottomnav__icon" data-icon="home"></span>
+      <span>ಮುಖಪುಟ</span>
+    </a>
+    <a href="#" class="mobile-bottomnav__item">
+      <span class="mobile-bottomnav__icon" data-icon="mic"></span>
+      <span>ಪಾಡ್‌ಕಾಸ್ಟ್</span>
+    </a>
+    <div class="mobile-bottomnav__item mobile-bottomnav__badge-wrap">
+      <button class="premium-badge premium-badge--pop mobile-bottomnav__badge" type="button" aria-label="ಪ್ರೀಮಿಯಂ">
+        <span class="premium-badge__icon" data-icon="nandi"></span>
+        <span class="mobile-bottomnav__premium-label">ಪ್ರೀಮಿಯಂ</span>
+      </button>
+    </div>
+    <button class="mobile-bottomnav__item" type="button" data-open-drawer>
+      <span class="mobile-bottomnav__icon" data-icon="menu"></span>
+      <span>ಮೆನು</span>
+    </button>
+  </nav>
+
+  <button class="premium-badge premium-badge--pop subscriber-view-toggle" type="button" data-subscriber-toggle aria-pressed="false" aria-label="Subscriber view">
+    <span class="premium-badge__icon" data-icon="crown"></span>
+  </button>
+
+  <button class="publication-view-toggle" type="button" data-publication-toggle aria-pressed="false" aria-label="Switch to Deccan Herald">
+    <span class="publication-view-toggle__mark">DH</span>
+    <span class="publication-view-toggle__label">DH</span>
+  </button>
+
+  <button class="color-mode-toggle" type="button" data-color-mode-toggle aria-label="Switch to Digital colors">
+    <span class="color-mode-toggle__mark">PS</span>
+    <span class="color-mode-toggle__label">Print Scan</span>
+  </button>
+
+
+  <div class="goo-stage" aria-hidden="true">
+    <div class="goo-blob">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur"></feGaussianBlur>
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 20 -10" result="goo-result"></feColorMatrix>
+            <feBlend in="SourceGraphic" in2="goo-result"></feBlend>
+          </filter>
+        </defs>
+        <g filter="url(#goo)">
+          <circle class="blob-1" cx="0" cy="0" r="28"></circle>
+          <circle class="blob-2" cx="0" cy="0" r="24"></circle>
+          <circle class="blob-3" cx="0" cy="0" r="26"></circle>
+          <circle class="blob-4" cx="0" cy="0" r="22"></circle>
+          <circle class="blob-5" cx="0" cy="0" r="30"></circle>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="premium-popup" id="premium-popup" role="dialog" aria-modal="true" aria-label="ಪ್ರೀಮಿಯಂ">
+    <button class="premium-popup__backdrop" type="button" data-close-popup aria-label="ಮುಚ್ಚಿ"></button>
+    <div class="premium-popup__card">
+      <div class="premium-popup__header">
+        <div class="premium-popup__title">
+          <span class="premium-badge premium-badge--sm" aria-hidden="true">
+            <span class="premium-badge__icon" data-icon="crown"></span>
+          </span>
+          <span>ಪ್ರೀಮಿಯಂ</span>
+        </div>
+        <button class="premium-popup__close" type="button" data-close-popup aria-label="ಮುಚ್ಚಿ">
+          <span data-icon="close"></span>
+        </button>
+      </div>
+      <div class="premium-popup__list">
+        <a class="premium-popup__item" href="#"><span class="premium-badge premium-badge--sm" aria-hidden="true"><span class="premium-badge__icon" data-icon="crown"></span></span><span>ಪ್ರೀಮಿಯಂ ಸುದ್ದಿಗಳು</span></a>
+        <a class="premium-popup__item" href="#"><span class="premium-badge premium-badge--sm" aria-hidden="true"><span class="premium-badge__icon" data-icon="paper"></span></span><span>ಇ-ಪೇಪರ್</span></a>
+        <a class="premium-popup__item" href="#"><span class="premium-badge premium-badge--sm" aria-hidden="true"><span class="premium-badge__icon" data-icon="book"></span></span><span>ಸುಧಾ</span></a>
+        <a class="premium-popup__item" href="#"><span class="premium-badge premium-badge--sm" aria-hidden="true"><span class="premium-badge__icon" data-icon="map"></span></span><span>ಮಯೂರ</span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer" id="site-drawer" aria-hidden="true">
+    <div class="drawer__surface">
+      <div class="drawer__inner">
+        <div class="drawer__topbar">
+          <a href="#" class="drawer__brand" aria-label="ಪ್ರಜಾವಾಣಿ ಮುಖಪುಟ">
+            <img class="drawer__logo-image" src="assets/prajavani-logo.svg" alt="ಪ್ರಜಾವಾಣಿ">
+            <span class="drawer__tagline">ಕನ್ನಡ ಪ್ರೆಸ್ ಸಂಸ್ಥೆ ಮೈಸೂರು</span>
+          </a>
+
+          <div class="drawer__toolbar">
+            <span class="drawer__search-accent" aria-hidden="true"></span>
+
+            <form class="drawer__searchform" role="search">
+              <input class="drawer__searchform-input" type="search" placeholder="ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ಹುಡುಕಿ..." aria-label="ಹುಡುಕಿ">
+              <button class="drawer__searchform-submit" type="submit" aria-label="ಹುಡುಕಾಟ ಸಲ್ಲಿಸಿ">
+                <span data-icon="search"></span>
+              </button>
+            </form>
+
+            <button class="drawer__mobile-search" type="button" aria-label="Search">
+              <span data-icon="search"></span>
+            </button>
+
+            <a href="#" class="drawer__subscribe">
+              <span data-icon="crown"></span>
+              <span>ಚಂದಾದಾರರಾಗಿ</span>
+            </a>
+
+            <button class="drawer__toolbar-btn drawer__profile" type="button" aria-label="ಲಾಗಿನ್">
+              <span data-icon="user"></span>
+              <span class="drawer__profile-badge" aria-hidden="true"><span data-icon="crown"></span></span>
+            </button>
+            <button class="drawer__toolbar-btn" type="button" data-close-drawer aria-label="ಮೆನು ಮುಚ್ಚಿ">
+              <span data-icon="close"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="drawer__quicklinks-shell">
+          <div class="drawer__quicklinks" aria-label="ಶೀಘ್ರ ವಿಭಾಗಗಳು">
+            <a href="#" class="drawer__quicklead" aria-label="ಘೋಷಣೆ">
+              <span data-icon="megaphone"></span>
+            </a>
+            <a href="#" class="drawer__quickchip">ಪಡುವಂದ</a>
+            <a href="#" class="drawer__quickchip">ಕ್ರೀಡೆ</a>
+            <a href="#" class="drawer__quickchip">ಭೂಮಿಕಾ</a>
+            <a href="#" class="drawer__quickchip">ಸಹಪಾಠಿ</a>
+            <a href="#" class="drawer__quickchip">ಕೃಷಿ ದರ್ಬಾರ್</a>
+          </div>
+        </div>
+
+        <section class="drawer__premium">
+          <div class="drawer__premium-title">ಪ್ರೀಮಿಯಂ ವೈಶಿಷ್ಟ್ಯಗಳು</div>
+          <div class="drawer__premium-grid">
+            <a href="#" class="drawer__premium-item"><span data-icon="crown"></span><span>ಪ್ರೀಮಿಯಂ</span></a>
+            <a href="#" class="drawer__premium-item"><span data-icon="paper"></span><span>ಇ-ಪೇಪರ್</span></a>
+            <a href="#" class="drawer__premium-item"><span data-icon="book"></span><span>ಸುಧಾ</span></a>
+            <a href="#" class="drawer__premium-item"><span data-icon="map"></span><span>ಮಯೂರ</span></a>
+          </div>
+          <a href="#" class="drawer__premium-cta">
+            <span data-icon="crown"></span>
+            <span>ಪೂರ್ಣ ಪ್ರವೇಶಕ್ಕಾಗಿ ಈಗಲೇ ಚಂದಾದಾರರಾಗಿ</span>
+            <span data-icon="arrow"></span>
+          </a>
+        </section>
+
+        <section class="drawer__catalog" aria-label="ಸಂಪೂರ್ಣ ಮೆನು">
+          <a href="#" class="drawer-card drawer-card--link">
+            <span class="drawer-card__main">
+              <span class="drawer-card__title">ಇ-ಪೇಪರ್</span>
+            </span>
+          </a>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-districts">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಜಿಲ್ಲೆ</span>
+                <span class="drawer-card__meta">ಉಡುಪಿ, ಉತ್ತರ ಕನ್ನಡ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-districts">
+              <a href="#" class="drawer-card__submenu-link">ಉಡುಪಿ</a>
+              <a href="#" class="drawer-card__submenu-link">ಉತ್ತರ ಕನ್ನಡ</a>
+              <a href="#" class="drawer-card__submenu-link">ಮೈಸೂರು</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-news">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಸುದ್ದಿ</span>
+                <span class="drawer-card__meta">ರಾಜಕೀಯ, ರಾಷ್ಟ್ರೀಯ, ಡಿಜಿಟಲ್ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-news">
+              <a href="#" class="drawer-card__submenu-link">ರಾಜಕೀಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ರಾಷ್ಟ್ರೀಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ಬೆಂಗಳೂರು</a>
+              <a href="#" class="drawer-card__submenu-link">ಡಿಜಿಟಲ್</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-cinema">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಸಿನಿಮಾ ರಂಜನೆ</span>
+                <span class="drawer-card__meta">ಟಿವಿ, ಡಿಜಿಟಲ್-ಒಟಿಟಿ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-cinema">
+              <a href="#" class="drawer-card__submenu-link">ಟಿವಿ</a>
+              <a href="#" class="drawer-card__submenu-link">ಡಿಜಿಟಲ್</a>
+              <a href="#" class="drawer-card__submenu-link">ಹಾಲಿವುಡ್</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-opinion">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಅಭಿಮತ</span>
+                <span class="drawer-card__meta">ಪಾಡ್‌ಕಾಸ್ಟ್, ಚರ್ಚೆ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-opinion">
+              <a href="#" class="drawer-card__submenu-link">ಸಂಪಾದಕೀಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ವಿಶ್ಲೇಷಣೆ</a>
+              <a href="#" class="drawer-card__submenu-link">ಪತ್ರಿಕೆ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-jyotishya">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ವಾಸ್ತು-ಜ್ಯೋತಿಷ್ಯ</span>
+                <span class="drawer-card__meta">ಭವಿಷ್ಯ, ಪಂಚಾಂಗ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-jyotishya">
+              <a href="#" class="drawer-card__submenu-link">ಭವಿಷ್ಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ಪಂಚಾಂಗ</a>
+              <a href="#" class="drawer-card__submenu-link">ವಾಸ್ತು</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-info">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಸಮಗ್ರ ಮಾಹಿತಿ</span>
+                <span class="drawer-card__meta">ಆಳ-ಅಳಗೆ, ಚೆಕ್‌ನೋಟ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-info">
+              <a href="#" class="drawer-card__submenu-link">ಆಳ-ಅಳಗೆ</a>
+              <a href="#" class="drawer-card__submenu-link">ಚೆಕ್‌ನೋಟ</a>
+              <a href="#" class="drawer-card__submenu-link">ವೈಶಿಷ್ಟ್ಯ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-columns">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಅಂಕಣಗಳು</span>
+                <span class="drawer-card__meta">ಅನುವಾದ, ಅನುಸಂಧಾನ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-columns">
+              <a href="#" class="drawer-card__submenu-link">ಅನುವಾದ</a>
+              <a href="#" class="drawer-card__submenu-link">ಅನುಸಂಧಾನ</a>
+              <a href="#" class="drawer-card__submenu-link">ವಿಮರ್ಶೆ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-sports">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಕ್ರೀಡೆ</span>
+                <span class="drawer-card__meta">ಕ್ರಿಕೆಟ್, ಲೀಗ್‌ಗಳು ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-sports">
+              <a href="#" class="drawer-card__submenu-link">ಕ್ರಿಕೆಟ್</a>
+              <a href="#" class="drawer-card__submenu-link">ಫುಟ್‌ಬಾಲ್</a>
+              <a href="#" class="drawer-card__submenu-link">ಕಬ್ಬಡ್ಡಿ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-business">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ವಾಣಿಜ್ಯ</span>
+                <span class="drawer-card__meta">ಸಂಪೂರ್ಣವ, ಬಜೆಟ್ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-business">
+              <a href="#" class="drawer-card__submenu-link">ಬಜೆಟ್</a>
+              <a href="#" class="drawer-card__submenu-link">ಮಾರುಕಟ್ಟೆ</a>
+              <a href="#" class="drawer-card__submenu-link">ಸ್ಟಾರ್ಟ್‌ಅಪ್</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-tech">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ತಂತ್ರಜ್ಞಾನ-ಆಟೋಮೊಬೈಲ್</span>
+                <span class="drawer-card__meta">AI, ಟೆಕ್ ರಿವ್ಯೂ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-tech">
+              <a href="#" class="drawer-card__submenu-link">AI</a>
+              <a href="#" class="drawer-card__submenu-link">ಗ್ಯಾಜೆಟ್‌ಗಳು</a>
+              <a href="#" class="drawer-card__submenu-link">ಆಟೋ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-health">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಆರೋಗ್ಯ-ಆಹಾರ</span>
+                <span class="drawer-card__meta">ಕಸ ರಸಂ, ತಿಂಡಿಮನೆ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-health">
+              <a href="#" class="drawer-card__submenu-link">ಆರೋಗ್ಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ಆಹಾರ</a>
+              <a href="#" class="drawer-card__submenu-link">ಫಿಟ್ನೆಸ್</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-education">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಶಿಕ್ಷಣ/ಉದ್ಯೋಗ</span>
+                <span class="drawer-card__meta">ಉದ್ಯೋಗ, ಮಾರ್ಗದರ್ಶಿ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-education">
+              <a href="#" class="drawer-card__submenu-link">ಉದ್ಯೋಗ</a>
+              <a href="#" class="drawer-card__submenu-link">ಪರೀಕ್ಷೆಗಳು</a>
+              <a href="#" class="drawer-card__submenu-link">ಮಾರ್ಗದರ್ಶಿ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-society">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಸಮಾಜ</span>
+                <span class="drawer-card__meta">ದಸರಾ ಸಂಭ್ರಮ, ಧರ್ಮ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-society">
+              <a href="#" class="drawer-card__submenu-link">ಧರ್ಮ</a>
+              <a href="#" class="drawer-card__submenu-link">ಪರಂಪರೆ</a>
+              <a href="#" class="drawer-card__submenu-link">ಸಂಸ್ಕೃತಿ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-arts">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಕಲೆ/ಸಾಹಿತ್ಯ</span>
+                <span class="drawer-card__meta">ಸಾರಾಂಶ, ಪುಸ್ತಕ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-arts">
+              <a href="#" class="drawer-card__submenu-link">ಪುಸ್ತಕ</a>
+              <a href="#" class="drawer-card__submenu-link">ಸಾಹಿತ್ಯ</a>
+              <a href="#" class="drawer-card__submenu-link">ವಿಮರ್ಶೆ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-agri">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಕೃಷಿ (ಕೃಷಿ-ಪರಿಸರ)</span>
+                <span class="drawer-card__meta">ಕೃಷಿ ತಂತ್ರಜ್ಞಾನ, ಪರಿಸರಗೊಂದಿ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-agri">
+              <a href="#" class="drawer-card__submenu-link">ಕೃಷಿ</a>
+              <a href="#" class="drawer-card__submenu-link">ಪರಿಸರ</a>
+              <a href="#" class="drawer-card__submenu-link">ತಂತ್ರಜ್ಞಾನ</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-vote">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಪ್ರಜಾ ಮತ</span>
+                <span class="drawer-card__meta">ಚುನಾವಣೆ ಇನ್ಫೋಗ್ರಾಫಿಕ್, ಅಭ್ಯರ್ಥಿ ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-vote">
+              <a href="#" class="drawer-card__submenu-link">ಚುನಾವಣೆ</a>
+              <a href="#" class="drawer-card__submenu-link">ಅಭ್ಯರ್ಥಿಗಳು</a>
+              <a href="#" class="drawer-card__submenu-link">ಇನ್ಫೋಗ್ರಾಫಿಕ್</a>
+            </div>
+          </div>
+
+          <div class="drawer-card">
+            <button class="drawer-card__trigger" type="button" data-toggle-submenu aria-expanded="false" aria-controls="submenu-travel">
+              <span class="drawer-card__main">
+                <span class="drawer-card__title">ಪ್ರವಾಸ</span>
+                <span class="drawer-card__meta">PR Spot, ಯೋಜನೆಗಳು ಇನ್ನುಷ್ಟು</span>
+              </span>
+              <span class="drawer-card__icon" data-icon="arrow"></span>
+            </button>
+            <div class="drawer-card__submenu" id="submenu-travel">
+              <a href="#" class="drawer-card__submenu-link">ಸ್ಥಳಗಳು</a>
+              <a href="#" class="drawer-card__submenu-link">ಯೋಜನೆಗಳು</a>
+              <a href="#" class="drawer-card__submenu-link">ಪ್ರಯಾಣ ಕಥೆಗಳು</a>
+            </div>
+          </div>
+        </section>
+
+        <footer class="drawer__footer">
+          <div class="drawer__footer-group">
+            <span class="drawer__footer-label">ನಮ್ಮನ್ನು ಅನುಸರಿಸಿ</span>
+            <div class="drawer__footer-links">
+              <a href="#" aria-label="WhatsApp"><span data-icon="whatsapp"></span></a>
+              <a href="#" aria-label="Facebook"><span data-icon="facebook"></span></a>
+              <a href="#" aria-label="X"><span data-icon="x"></span></a>
+              <a href="#" aria-label="Instagram"><span data-icon="instagram"></span></a>
+              <a href="#" aria-label="YouTube"><span data-icon="youtube"></span></a>
+              <a href="#" aria-label="Telegram"><span data-icon="telegram"></span></a>
+            </div>
+          </div>
+          <div class="drawer__footer-group">
+            <span class="drawer__footer-label">ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ</span>
+            <div class="drawer__footer-contact">
+              <a href="mailto:support@prajavani.net"><span data-icon="mail"></span><span>support@prajavani.net</span></a>
+              <a href="tel:+919035267304"><span data-icon="whatsapp"></span><span>+91 9035267304</span></a>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="nav.js?v=22a2e14"></script>
+  <script src="home-top.js"></script>
 </body>
 </html>

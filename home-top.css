@@ -1,0 +1,491 @@
+/* Home top content. Navigation, drawer and brand theming live in styles.css. */
+:root{--ink:#151515;--muted:#727272;--line:#dedede;--premium:#fff4d6;--premium-deep:#54251e}
+.page-wrap img{display:block;max-width:100%;object-fit:cover}
+.shell{width:calc(100% - 44px);margin:auto}
+.page-wrap{padding:18px 0 50px;color:var(--ink);line-height:normal}
+/* Preview controls float above the page as fixed pill bars. */
+.preview-floaters{position:fixed;left:16px;bottom:16px;z-index:900;display:flex;flex-direction:column;align-items:flex-start;gap:8px;max-width:calc(100% - 32px);line-height:normal;pointer-events:none}
+.mode-toolbar{pointer-events:auto;scrollbar-width:none;display:flex;align-items:center;gap:8px;max-width:100%;overflow-x:auto;padding:7px 8px 7px 12px;border:1px solid #cfcfcf;border-radius:24px;background:#ffffffed;box-shadow:0 5px 18px #0003;color:var(--muted);font-size:12px}
+.mode-toolbar span{font-size:11px;margin-right:4px;white-space:nowrap}
+/* Subscribers always get Ad Lite; only DH non-subscribers choose between With Ad and Brandspot. */
+body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:none}
+@media (max-width:1023px){.preview-floaters{left:8px;bottom:76px;max-width:calc(100% - 92px)}}
+/* Below desktop, .page already clears the fixed header. */
+@media (max-width:1023px){.page-wrap{padding-top:0}}
+.mode-button{border:1px solid var(--line);border-radius:20px;background:#fff;padding:7px 12px;cursor:pointer;white-space:nowrap}
+.mode-button.active{background:var(--ink);border-color:var(--ink);color:#fff}
+.news-grid{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.lead-column,.latest-panel,.right-rail{min-width:0}
+.hero-story{position:relative;min-width:0;background:#090909;color:#fff;overflow:hidden;border-radius:4px}
+.hero-image-wrap{position:relative;display:block;aspect-ratio:1.5}
+.hero-image-wrap:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#090909);pointer-events:none}
+.hero-image-wrap img{width:100%;height:100%;object-fit:cover}
+.hero-copy{position:relative;padding:16px 20px 20px;background:linear-gradient(#090909,#090909)}
+.eyebrow{display:block;color:#038ba1;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+
+.hero-copy h1,.premium-feature h2,.story-card h2,.news-card h3{}
+.hero-copy h1{font-size:30px;line-height:1.15;margin:6px 0 10px}
+.hero-subheading{font-size:16px;line-height:1.45;margin:0 0 10px}
+/* DH headlines and descriptions stop after three lines at every viewport width. */
+.page-wrap h1,.page-wrap h2,.page-wrap h3,.hero-subheading,.premium-feature p{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.story-meta{font-size:11px;color:var(--muted);margin-top:8px}
+.hero-copy .story-meta{color:#eee}
+.hero-copy .story-meta,.story-card .story-meta,.news-card .story-meta{font-size:14px}
+/* Meta row: relative time on the left, read-time (icon + text) aligned right */
+.story-meta,.pv-meta{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.meta-time{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.read-time{display:inline-flex;align-items:center;gap:4px;flex:none;white-space:nowrap}
+.read-time::before{content:"";width:1em;height:1em;flex:none;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1C4.13438 1 1 4.13438 1 8C1 11.8656 4.13438 15 8 15C11.8656 15 15 11.8656 15 8C15 4.13438 11.8656 1 8 1ZM8 13.8125C4.79063 13.8125 2.1875 11.2094 2.1875 8C2.1875 4.79063 4.79063 2.1875 8 2.1875C11.2094 2.1875 13.8125 4.79063 13.8125 8C13.8125 11.2094 11.2094 13.8125 8 13.8125Z'/%3E%3Cpath d='M10.7297 9.97812L8.50156 8.36719V4.5C8.50156 4.43125 8.44531 4.375 8.37656 4.375H7.625C7.55625 4.375 7.5 4.43125 7.5 4.5V8.80313C7.5 8.84375 7.51875 8.88125 7.55156 8.90469L10.1359 10.7891C10.1922 10.8297 10.2703 10.8172 10.3109 10.7625L10.7578 10.1531C10.7984 10.0953 10.7859 10.0172 10.7297 9.97812Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 1C4.13438 1 1 4.13438 1 8C1 11.8656 4.13438 15 8 15C11.8656 15 15 11.8656 15 8C15 4.13438 11.8656 1 8 1ZM8 13.8125C4.79063 13.8125 2.1875 11.2094 2.1875 8C2.1875 4.79063 4.79063 2.1875 8 2.1875C11.2094 2.1875 13.8125 4.79063 13.8125 8C13.8125 11.2094 11.2094 13.8125 8 13.8125Z'/%3E%3Cpath d='M10.7297 9.97812L8.50156 8.36719V4.5C8.50156 4.43125 8.44531 4.375 8.37656 4.375H7.625C7.55625 4.375 7.5 4.43125 7.5 4.5V8.80313C7.5 8.84375 7.51875 8.88125 7.55156 8.90469L10.1359 10.7891C10.1922 10.8297 10.2703 10.8172 10.3109 10.7625L10.7578 10.1531C10.7984 10.0953 10.7859 10.0172 10.7297 9.97812Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.secondary-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:14px}
+.story-card{min-width:0;border-top:1px solid var(--line);padding-top:12px}
+.story-card>a{display:block}
+.story-card img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.story-card .eyebrow{margin-top:8px;font-size:14px}
+.story-card h2{font-size:16px;line-height:1.15;margin:4px 0 0}
+.story-card h2 a,.news-card h3 a,.premium-feature h2 a,.compact-story h3 a{text-decoration:none}
+.latest-list{display:grid;gap:14px}
+.news-card{min-width:0;display:grid;grid-template-columns:minmax(0,1fr);align-content:start}
+.news-card>a{display:block}
+.news-card img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.news-card .eyebrow{font-size:14px;margin-top:6px}
+.news-card h3{font-size:16px;line-height:1.15;margin:3px 0 0}
+.latest-divider{display:none}
+.subscriber-story,.brandspot-story,.mobile-standard{display:none}
+.ad-slot{display:none;width:300px;max-width:100%;margin:18px auto 0}
+.ad-slot span{display:block;text-align:center;color:var(--muted);font-weight:400;font-size:10px;line-height:normal;margin-bottom:5px}
+.ad-slot img{width:300px;height:250px}
+.mobile-secondary-ad{display:none;width:300px;max-width:100%;margin:18px auto}
+.mobile-secondary-ad span{display:block;text-align:center;color:var(--muted);font-weight:400;font-size:10px;line-height:normal;margin-bottom:5px}
+.mobile-secondary-ad img{width:300px;height:250px}
+.premium-panel{height:100%;min-width:0;display:flex;flex-direction:column;gap:12px;padding:0 14px 12px;background:var(--premium);border:1px solid #d9ac38;border-radius:4px}
+.premium-heading{height:58px;flex:none;display:flex;align-items:center;justify-content:center;gap:10px;margin:0 -14px;padding:8px 14px;background:var(--premium-deep);color:#fff}
+.premium-heading img{width:28px;height:28px;object-fit:contain}
+.premium-heading h2{margin:0;font-weight:700;font-size:20px;line-height:normal}
+.premium-feature{min-width:0}
+.premium-feature>a{display:block}.premium-feature>a img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.premium-feature>.eyebrow{margin-top:7px;font-size:14px}
+.premium-feature h2{font-size:20px;line-height:1.14;margin:4px 0}
+.premium-nandi-badge{float:left;width:1em;height:1em;max-height:1em;object-fit:contain;margin:0 .25em 0 0}
+.premium-feature p{font-size:16px;line-height:1.4;margin:5px 0}
+.premium-panel .eyebrow{color:var(--premium-deep)}
+.premium-list{display:flex;flex:1;flex-direction:column;gap:9px;min-height:0}
+.compact-story{min-width:0;display:grid;grid-template-columns:80px minmax(0,1fr);gap:10px;border-top:1px solid #dec06a;padding-top:9px}
+.compact-story>img{width:80px;height:auto;aspect-ratio:1.5;border-radius:3px}
+.compact-story .eyebrow{font-size:14px}
+.compact-story h3{font-weight:600;font-size:16px;line-height:1.2;margin:3px 0}
+.compact-story .story-meta{margin-top:3px}
+.premium-panel .story-meta{font-size:14px}
+.premium-cta{display:block;flex:none;padding:10px;text-align:center;text-decoration:none;background:#f6c936;border-radius:3px;font-size:16px;font-weight:700}
+
+/* Mobile: natural reading order; only the first two More News cards join the supports. */
+@media (max-width:700px){
+  body{min-width:0}
+  body[data-mode="with-ad"] .mobile-secondary-ad{display:block;order:9}
+  .shell{width:calc(100% - 20px)}.preview-floaters span{display:none}.mode-button{font-size:11px;padding:7px 10px}
+   .news-grid{display:flex;flex-direction:column;gap:0}.lead-column{display:contents}.hero-story{order:1;min-height:0}.hero-copy{padding:15px}.hero-copy h1{font-size:24px}.hero-subheading{font-size:16px}.secondary-grid{display:contents}.story-card{order:3;display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);column-gap:12px;align-items:start;padding:12px 0;border-top:1px solid var(--line)}.story-card>a{grid-column:1;grid-row:1/ span 3}.story-card img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;border-radius:3px}.story-card .eyebrow,.story-card h2,.story-card .story-meta{grid-column:2}.story-card .eyebrow{font-size:14px;margin:0}.story-card h2{font-size:16px;line-height:1.18;margin:4px 0}.story-card .story-meta{font-size:14px;margin:3px 0 0}
+    .latest-panel{display:contents}.latest-panel>.section-heading{order:2;display:none}.latest-list{display:contents}.news-card{order:3;display:none;grid-template-columns:minmax(0,42%) minmax(0,1fr);column-gap:12px;align-items:start;border-top:1px solid var(--line);padding:12px 0}.news-card>a{grid-column:1;grid-row:1/span 3}.news-card img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;border-radius:3px}.news-card .eyebrow,.news-card h3,.news-card .story-meta{grid-column:2}.news-card .eyebrow{font-size:14px;margin:0}.news-card h3{font-size:16px;line-height:1.18;margin:4px 0}.news-card .story-meta{font-size:14px;margin:3px 0 0}.base-primary,.base-secondary{display:grid}body[data-mode="brandspot-lite"] .brandspot-story{display:none}.ad-slot{order:2;margin:12px auto 18px}body[data-mode="with-ad"] .ad-slot{display:block}.right-rail{display:contents}.premium-panel{order:10;margin-top:20px;padding:0 9px 10px;border-radius:0;gap:10px}.premium-heading{margin:0 -9px 3px;padding:10px}.premium-feature h2{font-size:20px}.premium-list{flex:none}.compact-story{grid-template-columns:minmax(0,42%) minmax(0,1fr)}.desktop-premium-story{display:none}.compact-story>img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover;border-radius:3px}.premium-cta{margin-top:4px}
+  /* Mobile Brandspot stories follow the Premium block. */
+  body[data-mode="brandspot-lite"] .brandspot-story{display:grid;order:11}
+  body[data-mode="brandspot-lite"] .brandspot-primary{margin-top:16px}
+  .premium-panel{border-radius:4px;overflow:hidden}
+  .premium-heading{border-radius:3px 3px 0 0}
+  .premium-feature{background:#000;color:#fff;border-radius:3px;overflow:hidden}
+  .premium-feature>a{position:relative}
+  .premium-feature>a:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#000);pointer-events:none}
+  .premium-feature>.eyebrow{margin:0;padding:10px 12px 0;color:#00b3cc}
+  .premium-feature h2{padding:0 12px;margin:4px 0;color:#fff}
+  .premium-feature p{padding:0 12px;color:#f1e8e6}
+  .premium-feature .story-meta{padding:0 12px 12px;color:#eee}
+ }
+
+/* Tablet uses the same source order and a constrained two-column content grid. */
+@media (min-width:701px) and (max-width:1023px){
+  .secondary-grid{border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}
+  .shell{width:calc(100% - 44px)}.news-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:20px}.lead-column{grid-column:1;grid-row:1}.latest-panel{grid-column:2;grid-row:1;min-width:0}.right-rail{grid-column:1/-1;grid-row:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:20px;align-items:start}.premium-panel{grid-column:2}.desktop-premium-story{display:none}.latest-list{gap:12px}.base-secondary{margin-top:-6px;border-top:1px solid var(--line);padding-top:6px}.news-card img{aspect-ratio:1.5}.brandspot-story,.mobile-standard{display:none}.ad-slot{display:none}body[data-mode="with-ad"] .ad-slot{display:block}.premium-feature{background:#000;color:#fff;border-radius:3px;overflow:hidden}.premium-feature>a{position:relative}.premium-feature>a:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#000);pointer-events:none}.premium-feature>.eyebrow{margin:0;padding:10px 12px 0;color:#00b3cc}.premium-feature h2{padding:0 12px;margin:4px 0;color:#fff}.premium-feature p{padding:0 12px;color:#f1e8e6}.premium-feature .story-meta{padding:0 12px 12px;color:#eee}
+}
+
+/* The featured Premium story card itself uses the same black treatment as the lead story. */
+.premium-feature{background:#000!important;color:#fff}
+
+/* Keep the Premium featured image overlay identical to the lead story. */
+.premium-feature>a:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#000)!important;z-index:1;pointer-events:none}
+
+/* Desktop rail widths track the historical 682 / 333 / 333 composition. */
+@media (min-width:1024px){
+  .news-grid{grid-template-columns:minmax(0,1.52fr) minmax(0,1fr) minmax(0,1fr);gap:20px}.right-rail{display:flex;flex-direction:column;min-height:0}
+  .secondary-grid{gap:12px;border-top:1px solid var(--line);padding-top:12px}.story-card{border-top:0;padding-top:0}.story-card h2{font-size:16px}
+  .latest-panel{min-width:0;display:flex;flex-direction:column}.latest-list{display:flex;flex:1;flex-direction:column;justify-content:space-between;gap:0}.news-card{display:none}.news-card img{aspect-ratio:1.8}.brandspot-story{display:none}
+  body[data-mode="with-ad"] .base-primary,body[data-mode="with-ad"] .base-secondary,body[data-mode="subscribers-lite"] .base-primary,body[data-mode="subscribers-lite"] .base-secondary,body[data-mode="subscribers-lite"] .brandspot-primary,body[data-mode="brandspot-lite"] .base-primary,body[data-mode="brandspot-lite"] .base-secondary,body[data-mode="brandspot-lite"] .brandspot-story{display:grid}
+  body[data-mode="with-ad"] .base-primary + .latest-divider,body[data-mode="with-ad"] .base-secondary + .latest-divider,body[data-mode="subscribers-lite"] .base-primary + .latest-divider,body[data-mode="subscribers-lite"] .base-secondary + .latest-divider,body[data-mode="brandspot-lite"] .base-primary + .latest-divider,body[data-mode="brandspot-lite"] .base-secondary + .latest-divider,body[data-mode="brandspot-lite"] .brandspot-primary + .latest-divider{display:block;position:relative;flex:1;min-height:18px}
+  .latest-divider:after{content:"";position:absolute;inset:50% 0 auto;border-top:1px solid var(--line)}
+  body[data-mode="brandspot-lite"] .brandspot-story{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);column-gap:8px;align-items:start}
+  body[data-mode="brandspot-lite"] .brandspot-story>a{grid-column:1;grid-row:1 / span 3}
+  body[data-mode="brandspot-lite"] .brandspot-story img{width:100%;height:auto;aspect-ratio:1.5;object-fit:cover}
+  body[data-mode="brandspot-lite"] .brandspot-story .eyebrow,body[data-mode="brandspot-lite"] .brandspot-story h3,body[data-mode="brandspot-lite"] .brandspot-story .story-meta{grid-column:2;min-width:0}
+  body[data-mode="brandspot-lite"] .brandspot-story .eyebrow{font-size:14px;margin-top:2px}
+    body[data-mode="brandspot-lite"] .brandspot-story h3{font-size:16px;line-height:1.15}
+    body[data-mode="brandspot-lite"] .brandspot-story .story-meta{font-size:14px;margin-top:4px}
+  body[data-mode="with-ad"] .ad-slot{display:block}
+  body[data-mode="with-ad"] .latest-panel>.ad-slot{margin-top:0}
+   .premium-panel{overflow:hidden}
+   .premium-heading{border-radius:3px 3px 0 0}
+   .premium-feature{background:#000;color:#fff;border-radius:3px;overflow:hidden}
+   .premium-feature>a{position:relative}
+    .premium-feature>a:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#000);pointer-events:none}
+   .premium-feature>.eyebrow{margin:0;padding:10px 12px 0;color:#00b3cc}
+   .premium-feature h2{padding:0 12px;margin:4px 0;color:#fff}
+   .premium-feature p{padding:0 12px;color:#f1e8e6}
+   .premium-feature .story-meta{padding:0 12px 12px;color:#eee}
+   .premium-list .desktop-premium-story:last-child{display:none}
+   .premium-list .compact-story{grid-template-columns:minmax(0,42%) minmax(0,1fr)}
+   .premium-list .compact-story>img{width:100%;height:auto;aspect-ratio:1.5}
+   .premium-list .compact-story h3{font-size:16px;line-height:1.15}
+  body[data-mode="with-ad"] .ad-slot{display:block}
+    .premium-panel{height:auto;min-height:0;flex:1;align-self:stretch}
+}
+
+/* Premium featured story uses the panel's normal light background. */
+.premium-feature{background:var(--premium)!important;color:var(--ink)!important;border-radius:0!important;overflow:visible!important}
+.premium-feature>a:after{display:none!important}
+.premium-feature>.eyebrow{margin-top:7px!important;padding:0!important;color:var(--premium-deep)!important}
+.premium-feature h2{padding:0!important;color:var(--ink)!important}
+.premium-feature h2 a{color:inherit}
+.premium-feature p{padding:0!important;color:var(--ink)!important}
+.premium-feature .story-meta{padding:0!important;color:var(--muted)!important}
+
+/* ============================================================
+   PRAJAVANI (PV) — additive layer, scoped to body:not(.is-dh).
+   body.is-dh is toggled by nav.js applyDeccanHeraldMode(); DH inherits none of this.
+   ============================================================ */
+:root{
+  --pv-red:#942a2a;        /* category / section rule */
+  --pv-red-light:#ff6b6b;  /* category over the dark hero */
+  --pv-ink:#1a1a1a;
+  --pv-muted:#6b6b6b;
+  --pv-body:#666;
+  --pv-line:#c4c4c4;
+  --pv-premium-deep:#4d211c;
+  --pv-premium-cat:#8c2600;
+  --pv-premium-bg:#fff7e0;
+  --pv-premium-border:#d9b24d;
+  --pv-cta:#ffd34d;
+  --pv-panel:#f7fafa;
+  --pv-panel-border:#d9dede;
+  --pv-subhashita-border:#eb1a25;
+}
+
+
+/* --- Show/hide: hide DH while in PV mode, reveal the PV root --- */
+.pv-root{display:none}
+body:not(.is-dh) .page-wrap{display:none}
+body:not(.is-dh) .pv-root{display:block}
+
+/* --- PV base --- */
+.pv-root{line-height:normal;color:var(--pv-ink);background:#fff;overflow-x:clip}
+.pv-root img{display:block;max-width:100%;object-fit:cover}
+.pv-shell{width:calc(100% - 44px);margin:auto;padding:18px 0 50px}
+/* Desktop content shares the header's content width. */
+@media (min-width:1024px){.shell,.pv-shell{width:var(--desktop-content-width)}}
+@media (max-width:1023px){.pv-shell{padding-top:0}}
+/* Keep every PV heading to a maximum of three lines. */
+.pv-root h1,.pv-root h2,.pv-root h3{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.pv-hero-sub,.pv-cinema-sub,.pv-premium-sub{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden}
+.pv-eyebrow{display:block;color:var(--pv-red);font-weight:600;font-size:14px}
+.pv-eyebrow-premium{color:var(--pv-premium-cat)}
+.pv-meta{font-size:14px;color:var(--pv-muted);margin-top:6px;flex-wrap:wrap}
+.pv-meta .meta-time{flex:none;overflow:visible;text-overflow:clip}
+.pv-meta .read-time{margin-left:auto}
+.pv-time-full{display:none}
+.pv-time-short{display:inline}
+
+
+/* --- PV grid (mirrors the Figma 553/364/364 composition) --- */
+.pv-grid{display:grid;grid-template-columns:minmax(0,1.52fr) minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:stretch}
+.pv-lead,.pv-middle,.pv-premium,.pv-right{min-width:0}
+.pv-ad{display:none;width:300px;max-width:100%;margin:0 auto 20px;text-align:center}
+.pv-ad span{display:block;color:var(--pv-muted);font-weight:400;font-size:10px;line-height:normal;margin-bottom:5px}
+.pv-ad img{width:300px;max-width:100%;height:250px;display:block;margin:0 auto}
+/* Ad toggle: show ad + hide the two extra premium stories only in "with ad" mode */
+body[data-pv-mode="with-ad"] .pv-ad{display:block}
+body[data-pv-mode="with-ad"] .pv-premium-extra{display:none}
+
+/* --- PV hero: DH-style dark overlay, 3:2 imagery --- */
+.pv-hero{position:relative;display:flex;flex-direction:column;background:#090909;color:#fff;overflow:hidden;border-radius:4px}
+.pv-hero-img{position:relative;display:block;aspect-ratio:1.5}
+.pv-hero-img:after{content:"";position:absolute;inset:82% 0 0;background:linear-gradient(transparent,#090909);pointer-events:none}
+.pv-hero-img img{width:100%;height:100%}
+.pv-hero-copy{position:relative;display:flex;flex-direction:column;flex:1;padding:16px 20px 20px;background:#090909}
+.pv-eyebrow-light{color:var(--pv-red-light)}
+.pv-hero-copy h1{font-weight:700;font-size:30px;line-height:normal;margin:6px 0 10px}
+.pv-hero-sub{font-size:16px;line-height:normal;margin:0;color:#e9e9e9}
+.pv-hero-copy .pv-meta{color:#ddd}
+
+.pv-divider{height:1px;background:var(--pv-line);margin:16px 0}
+.pv-two-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.pv-card,.pv-cinema,.pv-premium-lead{display:flex;flex-direction:column}
+.pv-card>*,.pv-cinema>*,.pv-premium-lead>*,.pv-hero-copy>*{flex-shrink:0}
+.pv-card>.pv-meta,.pv-cinema>.pv-meta,.pv-premium-lead>.pv-meta,.pv-hero-copy>.pv-meta{margin-top:auto;padding-top:6px}
+.pv-card>a{display:block}
+.pv-card img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.pv-card .pv-eyebrow{margin-top:8px}
+.pv-card h2{font-weight:600;font-size:16px;line-height:normal;margin:6px 0 0}
+.pv-card h2 a,.pv-cinema h3 a,.pv-thumb-text h3 a,.pv-premium-lead h3 a{text-decoration:none;color:inherit}
+
+/* --- PV middle column --- */
+.pv-middle{display:flex;flex-direction:column;gap:20px}
+.pv-middle-panel{background:var(--pv-panel);border:1px solid var(--pv-panel-border);border-radius:4px;padding:14px 16px;display:flex;flex-direction:column;gap:14px}
+.pv-middle-stories{display:flex;flex-direction:column;gap:14px}
+.pv-section-heading h2{font-weight:600;font-size:18px;line-height:normal;margin:0}
+.pv-section-rule{display:block;height:2px;background:var(--pv-red);margin-top:8px}
+.pv-cinema>a{display:block}
+.pv-cinema img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.pv-cinema .pv-eyebrow{margin-top:8px;font-size:14px}
+.pv-cinema h3{font-weight:600;font-size:16px;line-height:normal;margin:4px 0}
+.pv-cinema-sub{font-size:16px;color:var(--pv-body);line-height:normal;margin:0}
+.pv-thumb-row{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);gap:10px;border-top:1px solid var(--pv-line);padding-top:12px}
+.pv-thumb-img{display:block}
+.pv-thumb-img img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.pv-thumb-text .pv-eyebrow{font-size:14px}
+.pv-thumb-text h3{font-weight:600;font-size:16px;line-height:normal;margin:4px 0}
+
+/* --- PV Subhashita quote card --- */
+.pv-subhashita{display:flex;align-items:center;gap:16px;padding:20px;border:1px solid var(--pv-subhashita-border);border-radius:4px;background:linear-gradient(90deg,rgba(251,195,13,.16),rgba(235,26,37,.16))}
+.pv-avatar-ring{flex:none;width:100px;height:100px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#fbc30d,#3f7bbb 52%,#eb1a25)}
+.pv-avatar-ring img{width:100%;height:100%;border-radius:50%;border:2px solid #fff}
+.pv-subhashita-text{min-width:0}
+.pv-subhashita-title{display:flex;align-items:center;gap:8px;color:#8c3833;font-weight:700;font-size:19px;line-height:normal}
+.pv-subhashita-mark{flex:none;width:22px;height:22px;object-fit:contain}
+.pv-quote{color:#4d211c;font-weight:600;font-size:16px;line-height:1.4;margin:8px 0 6px}
+.pv-attribution{color:#4d211c;font-weight:400;font-size:14px;line-height:normal;margin:0}
+
+/* --- PV premium rail --- */
+.pv-premium{background:var(--pv-premium-bg);border:1px solid var(--pv-premium-border);border-radius:4px;overflow:hidden}
+.pv-premium-header{display:flex;align-items:center;justify-content:center;gap:10px;height:50px;padding:0 16px;background:var(--pv-premium-deep)}
+.pv-premium-header img{width:24px;height:24px;object-fit:contain}
+.pv-premium-header h2{margin:0;color:#fff2d9;font-weight:600;font-size:20px;line-height:normal}
+.pv-premium-body{padding:16px 14px;display:flex;flex-direction:column;gap:12px}
+.pv-premium-lead>a{display:block}
+.pv-premium-lead>a img{width:100%;aspect-ratio:1.5;border-radius:3px}
+.pv-premium-lead .pv-eyebrow{margin-top:7px}
+.pv-premium-lead h3{font-weight:600;font-size:20px;line-height:normal;margin:4px 0}
+.pv-premium-sub{font-size:16px;color:var(--pv-body);line-height:normal;margin:0}
+.pv-premium-row{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);gap:10px;border-top:1px solid var(--pv-premium-border);padding-top:12px}
+.pv-premium-row img{border-radius:3px}
+.pv-premium-body .pv-premium-row:first-child{border-top:0;padding-top:0}
+.pv-premium-row h3{font-weight:600;font-size:16px;line-height:normal;margin:4px 0}
+/* Metadata spans the full thumbnail card below its image and headline. */
+.pv-thumb-row,.pv-premium-row{grid-template-rows:minmax(min-content,1fr) auto;align-items:start;row-gap:6px}
+.pv-thumb-row>.pv-meta,.pv-premium-row>.pv-meta{grid-column:1/-1;align-self:end;margin-top:0}
+.pv-nandi-badge{float:left;width:1em;height:1em;object-fit:contain;margin:.1em .3em 0 0}
+.pv-premium-lead .pv-nandi-badge{margin-top:-.12em}
+.pv-premium-cta{display:block;margin-top:4px;padding:10px;text-align:center;text-decoration:none;background:var(--pv-cta);border-radius:3px;color:#111;font-weight:600;font-size:16px;line-height:normal}
+
+/* --- PV desktop: stretch middle + premium to the lead column and distribute spacing
+   so all three column bottoms align (mirrors DH's flex-fill technique). --- */
+@media (min-width:1024px){
+  .pv-middle{height:100%}
+  .pv-middle-panel,.pv-middle-stories{gap:10px}
+  .pv-subhashita{padding:10px;gap:10px}
+  .pv-avatar-ring{width:64px;height:64px}
+  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+4),body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+6){display:none}
+  .pv-middle-panel{flex:1}
+  .pv-middle-stories{flex:1;justify-content:flex-start}
+  .pv-middle-stories>article,.pv-premium-body>article{flex:1 0 auto}
+  .pv-right{display:flex;flex-direction:column}
+  .pv-ad{flex:none}
+  .pv-premium{display:flex;flex-direction:column;flex:1}
+  .pv-premium-body{flex:1;justify-content:flex-start}
+  .pv-premium-cta{flex:none}
+}
+
+/* --- PV responsive --- */
+/* Narrow desktop rails need fewer Premium cards to fit the lead column. */
+@media (min-width:1024px) and (max-width:1200px){
+  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+3),body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+5){display:none}
+}
+/* Keep desktop timestamps and reading time anchored to opposite edges. */
+@media (min-width:701px){
+  .pv-meta{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:start}
+  .pv-meta .meta-time{min-width:0;white-space:normal;text-align:left}
+  .pv-meta .read-time{margin-left:0;justify-self:end;text-align:right}
+}
+@media (max-width:1023px){
+  .pv-grid{grid-template-columns:1fr;gap:26px}
+}
+@media (max-width:700px){
+  .pv-shell{width:calc(100% - 20px)}
+  /* Premium block: show only the first 3 stories on mobile */
+  .pv-premium-row:nth-of-type(n+4){display:none}
+  .pv-hero-copy{padding:15px 15px 0}
+  .pv-hero-copy h1{font-size:24px}
+  .pv-divider{display:none}
+  .pv-two-cards{grid-template-columns:1fr;gap:0}
+  .pv-card{display:grid;grid-template-columns:minmax(0,42%) minmax(0,1fr);column-gap:12px;align-items:start;padding:12px 0 0;border-top:1px solid var(--pv-line)}
+  .pv-card>a{grid-column:1;grid-row:1/span 2}
+  .pv-card .pv-eyebrow,.pv-card h2,.pv-card .pv-meta{grid-column:2}
+  .pv-card .pv-eyebrow{font-size:14px;margin:0}
+  .pv-card h2{font-size:16px;line-height:normal;margin:4px 0}
+  .pv-card .pv-meta{grid-column:1/-1;align-self:end;font-size:14px;margin:6px 0 0;padding-top:0}
+  /* Match DH mobile: 3px image radius across all PV imagery */
+  .pv-card img,.pv-cinema img,.pv-thumb-img img,.pv-premium-lead>a img,.pv-premium-row img{border-radius:3px}
+  .pv-card img{width:100%;height:auto;aspect-ratio:1.5}
+  /* Match DH mobile thumbnail rows: image size, 12px gap, 12px top padding, compact type.
+     44% (vs 42%) compensates for the 9px panel padding so the image renders at DH's full-shell px. */
+  .pv-thumb-row,.pv-premium-row{grid-template-columns:minmax(0,44%) minmax(0,1fr);column-gap:12px;padding:12px 0 0}
+  .pv-thumb-text .pv-eyebrow,.pv-premium-row .pv-eyebrow{font-size:14px}
+  .pv-thumb-text h3,.pv-premium-row h3{font-size:16px;line-height:normal}
+  .pv-thumb-text .pv-meta,.pv-premium-row .pv-meta{font-size:14px}
+  /* Match DH mobile panel compactness (9px sides like DH premium panel) */
+  .pv-middle-panel{padding:12px 9px 10px}
+  .pv-premium-body{padding:12px 9px 10px}
+  .pv-premium-header{padding:0 9px}
+  .pv-subhashita{flex-direction:column;text-align:center}
+  .pv-subhashita-text{display:flex;flex-direction:column;align-items:center}
+  .pv-subhashita-title{justify-content:center}
+}
+
+/* DH mobile metadata spans the card below its image and headline. */
+@media (max-width:700px){
+  .hero-copy{padding-bottom:8px}
+  .story-card,.news-card{padding-bottom:8px}
+  .story-card>a,.news-card>a{grid-row:1/span 2}
+  .story-card .story-meta,.news-card .story-meta{grid-column:1/-1;align-self:end;margin-top:6px}
+  .compact-story{grid-template-rows:auto auto auto;column-gap:12px;row-gap:0}
+  .compact-story>div{display:contents}
+  .compact-story>img{grid-column:1;grid-row:1/span 2}
+  .compact-story .eyebrow{grid-column:2;grid-row:1}
+  .compact-story h3{grid-column:2;grid-row:2;align-self:start}
+  .compact-story .story-meta{grid-column:1/-1;grid-row:3;align-self:end;margin-top:6px}
+}
+/* DH desktop metadata uses a full-width bottom row, including thumbnail stories. */
+@media (min-width:701px){
+  .hero-copy{padding-bottom:0}
+  .story-card,.premium-feature{display:flex;flex-direction:column}
+  .story-card>.story-meta,.premium-feature>.story-meta{margin-top:auto;padding-top:6px}
+  .compact-story{grid-template-rows:auto auto auto;row-gap:0}
+  .compact-story>div{display:contents}
+  .compact-story>img{grid-column:1;grid-row:1/span 2}
+  .compact-story .eyebrow{grid-column:2;grid-row:1}
+  .compact-story h3{grid-column:2;grid-row:2;align-self:start}
+  .compact-story .story-meta{grid-column:1/-1;grid-row:3;align-self:end;margin-top:6px}
+  body[data-mode="brandspot-lite"] .brandspot-story>a{grid-row:1/span 2}
+  body[data-mode="brandspot-lite"] .brandspot-story .story-meta{grid-column:1/-1;grid-row:3;align-self:end;margin-top:6px}
+}
+/* PV Ad Lite leads with a featured Premium story and two thumbnail stories. */
+.pv-premium-lead{display:none}
+body[data-pv-mode="ad-lite"] .pv-premium-lead{display:flex}
+body[data-pv-mode="ad-lite"] .pv-premium-row:first-of-type,
+body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+4){display:none}
+@media (max-width:700px){
+  .pv-premium-lead{display:flex}
+  .pv-premium-row:first-of-type,.pv-premium-row:nth-of-type(n+4){display:none}
+}
+
+/* The first visible PV With Ad premium story has no separator above it. */
+@media (min-width:701px){
+  body[data-pv-mode="with-ad"] .pv-premium-body .pv-premium-row:first-of-type{border-top:0;padding-top:0}
+}
+/* An additional ad follows the PV main story in mobile With Ad mode. */
+.pv-mobile-main-ad{display:none;width:300px;max-width:100%;margin:18px auto}
+.pv-mobile-main-ad span{display:block;text-align:center;color:var(--pv-muted);font-weight:400;font-size:10px;line-height:normal;margin-bottom:5px}
+.pv-mobile-main-ad img{display:block;width:100%;height:auto}
+@media (max-width:700px){
+  body[data-pv-mode="with-ad"] .pv-mobile-main-ad{display:block}
+}
+/* Fit a fourth PV With Ad premium story on desktops without adding block height. */
+@media (min-width:1280px){
+  body[data-pv-mode="with-ad"] .pv-premium-body{padding-top:8px;padding-bottom:8px;gap:4px}
+  body[data-pv-mode="with-ad"] .pv-premium-row{padding-top:4px}
+  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(4){display:grid}
+  body[data-pv-mode="with-ad"] .pv-premium-cta{margin-top:0}
+}
+/* Show a third PV Ad Lite premium story on wider desktops (matches DH's count). */
+@media (min-width:1280px){
+  body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(4){display:grid}
+}
+/* Balance PV mobile story spacing without stacking container gaps and padding. */
+@media (max-width:700px){
+  .pv-hero-copy,.pv-card,.pv-cinema,.pv-thumb-row,.pv-premium-lead,.pv-premium-row{padding-top:12px;padding-bottom:12px}
+  .pv-middle-panel{padding-bottom:0;gap:0}
+  .pv-middle-stories{gap:0}
+  .pv-premium-body{padding-top:0;padding-bottom:12px;gap:0}
+  .pv-premium-cta{margin-top:0}
+}
+/* Balance every DH mobile story with equal top and bottom padding. */
+@media (max-width:700px){
+  .hero-copy,.story-card,.news-card,.premium-feature,.compact-story{padding-top:12px;padding-bottom:12px}
+  .premium-panel{padding-bottom:12px;gap:0}
+  .premium-heading{margin-bottom:0}
+  .premium-list{gap:0}
+  .premium-cta{margin-top:0}
+}
+/* Keep the mobile featured Premium icon inside the clamped PV heading. */
+@media (max-width:700px){
+  .pv-premium-lead .pv-nandi-badge{margin-top:0}
+}
+/* Balance PV desktop story padding while preserving the existing column heights. */
+@media (min-width:1024px){
+  .pv-hero-copy{padding-top:18px;padding-bottom:18px}
+  .pv-divider{margin-top:10px;margin-bottom:10px}
+  .pv-card,.pv-cinema,.pv-thumb-row{padding-top:6px;padding-bottom:6px}
+  .pv-middle-panel,.pv-middle-stories{gap:0}
+  body[data-pv-mode] .pv-premium-body{padding-top:4px;padding-bottom:8px;gap:0}
+  body[data-pv-mode] .pv-premium-row,.pv-premium-lead{padding-top:4px;padding-bottom:4px}
+  body[data-pv-mode="with-ad"] .pv-premium-body .pv-premium-row:first-of-type{padding-top:4px}
+  /* Give the Ad Lite featured lead a top gap matching its 16px sides; the flex
+     rows below absorb it, so the block height is unchanged. */
+  body[data-pv-mode="ad-lite"] .pv-premium-lead{padding-top:12px}
+  /* Match the middle column's 16px headline so the lead is compact enough to leave
+     room for three breathing thumbnail rows (like DH). */
+  body[data-pv-mode="ad-lite"] .pv-premium-lead h3{font-size:16px}
+}
+/* Center desktop Premium story content, reserving the bottom track for metadata. */
+@media (min-width:1024px){
+  body[data-pv-mode] .pv-premium-body>article{flex:1 1 0;min-height:0}
+  body[data-pv-mode] .pv-premium-row{grid-template-rows:minmax(0,1fr) auto minmax(min-content,1fr);align-content:stretch;row-gap:0;padding-top:0;padding-bottom:0}
+  body[data-pv-mode="with-ad"] .pv-premium-body .pv-premium-row:first-of-type{padding-top:0}
+  .pv-premium-row .pv-thumb-img,.pv-premium-row .pv-thumb-text{grid-row:2}
+  .pv-premium-row>.pv-meta{grid-row:3;padding-top:2px}
+  /* Ad Lite shows just two rows, so center each as one group (image+headline+meta)
+     with balanced top/bottom space instead of pinning the meta to the bottom. */
+  body[data-pv-mode="ad-lite"] .pv-premium-row{grid-template-rows:auto auto;align-content:center;row-gap:6px}
+  body[data-pv-mode="ad-lite"] .pv-premium-row .pv-thumb-img,
+  body[data-pv-mode="ad-lite"] .pv-premium-row .pv-thumb-text{grid-row:1}
+  body[data-pv-mode="ad-lite"] .pv-premium-row>.pv-meta{grid-row:2;padding-top:0}
+}
+/* Balance desktop More News stories while keeping metadata at the bottom. */
+@media (min-width:1024px){
+  .pv-middle-stories>.pv-cinema{flex:0 0 auto;font-size:14px;padding-top:calc(1lh + 2px);padding-bottom:0}
+  .pv-cinema>.pv-meta{margin-top:0;padding-top:2px}
+  .pv-middle-stories>.pv-thumb-row{flex:1 1 0;min-height:0;grid-template-rows:minmax(0,1fr) auto minmax(min-content,1fr);align-content:stretch;row-gap:0;padding-top:0;padding-bottom:0}
+  .pv-thumb-row>.pv-thumb-img,.pv-thumb-row>.pv-thumb-text{grid-row:2}
+  .pv-thumb-row>.pv-meta{grid-row:3;padding-top:2px}
+}
+
+/* Center both desktop More News dividers in the gaps between stories. */
+@media (min-width:1024px){
+  .pv-middle-stories>.pv-thumb-row{border-top-color:transparent}
+  .pv-middle-stories>.pv-thumb-row::before{content:"";grid-column:1/-1;grid-row:1;align-self:center;height:1px;background:var(--pv-line);pointer-events:none}
+}
+
+/* Equal outer spacing around the desktop PV Premium button. */
+@media (min-width:1024px){
+  body[data-pv-mode] .pv-premium-body{padding-bottom:16px}
+  body[data-pv-mode] .pv-premium-cta{margin-top:16px}
+}
+
+/* Give DH desktop hero metadata the same 16px outer padding as the copy above. */
+@media (min-width:1024px){
+  body.is-dh .hero-copy{padding-bottom:16px}
+}
+
+/* Align DH desktop columns by letting the main story fill the spare height. */
+@media (min-width:1024px){
+  body.is-dh .lead-column{display:flex;flex-direction:column}
+  body.is-dh .hero-story{display:flex;flex-direction:column;flex:1}
+  body.is-dh .hero-image-wrap{flex:none}
+  body.is-dh .hero-copy{display:flex;flex-direction:column;flex:1}
+  body.is-dh .hero-copy>*{flex-shrink:0}
+  body.is-dh .hero-copy>.story-meta{margin-top:auto;padding-top:8px}
+  body.is-dh .secondary-grid{flex:none}
+}
