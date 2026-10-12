@@ -59,7 +59,7 @@ The hero has no Story Section; every other story shows one. Premium always has a
 - Right column (Premium), top to bottom:
   1. Premium heading
   2. Premium hero story
-  3. 5 Premium non-hero stories
+  3. 3 Premium non-hero stories
   4. Premium call-to-action
 
 **Subscribers, desktop** (three columns)
@@ -75,7 +75,7 @@ The hero has no Story Section; every other story shows one. Premium always has a
 - Right column (Premium), top to bottom:
   1. Premium heading
   2. Premium hero story
-  3. 5 Premium non-hero stories
+  3. 3 Premium non-hero stories
   4. Premium call-to-action
 
 **Brandspot, desktop** (three columns)
@@ -92,7 +92,7 @@ The hero has no Story Section; every other story shows one. Premium always has a
 - Right column (Premium), top to bottom:
   1. Premium heading
   2. Premium hero story
-  3. 5 Premium non-hero stories
+  3. 3 Premium non-hero stories
   4. Premium call-to-action
 
 **With Ad, mobile** (single column, top to bottom)
@@ -194,7 +194,7 @@ A collection must hold at least the largest count any variation or device needs,
 | Collection | Minimum stories |
 | --- | --- |
 | DH Top Stories | 6 |
-| DH Premium | 6 |
+| DH Premium | 4 |
 | PV Lead | 3 |
 | PV ಇನ್ನಷ್ಟು ಓದಿ | 3 |
 | PV ಸುಭಾಷಿತ | 1 (the current day's Subhashita) |
@@ -295,6 +295,7 @@ These rules apply to both the time labels (5.1) and the read time labels (5.2). 
 - [ ] Reordering stories in a group changes the reader-facing order in that group only.
 - [ ] Adding or removing a group in Home Top shows or removes its stories on the home page. The desktop layout itself never changes.
 - [ ] The meta line on every story uses the labels in section 5 (DH English form, PV short form).
+- [ ] On both brands the time label can wrap onto a second line when it does not fit, and the read time stays right-aligned.
 - [ ] No story appears twice within Home Top.
 - [ ] Premium groups show only Premium stories; non-Premium stories added to them are skipped.
 - [ ] When a group has fewer stories than its layout needs, desktop leaves the space empty and mobile adapts with no gaps.
