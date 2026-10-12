@@ -121,7 +121,7 @@ On mobile the 4 non-hero stories come in one sequence, not split between left an
 
 ### 4.2 Prajavani
 
-Every story, including the hero, shows a Story Section. Premium always has a heading, the Premium badge on each headline and the "ಎಲ್ಲಾ ಪ್ರೀಮಿಯಂ ಲೇಖನಗಳನ್ನು ನೋಡಿ" call-to-action.
+Every story, including the hero, shows a Story Section. Premium always has a heading, the Premium badge on each headline, a sub-heading on the Premium hero story (when it is shown) and the "ಎಲ್ಲಾ ಪ್ರೀಮಿಯಂ ಲೇಖನಗಳನ್ನು ನೋಡಿ" call-to-action.
 
 **With Ad, desktop** (three columns)
 
@@ -155,7 +155,7 @@ Every story, including the hero, shows a Story Section. Premium always has a hea
   5. Subhashita
 - Right column (no ad), top to bottom:
   1. Premium heading
-  2. Premium hero story
+  2. Premium hero story (with sub-heading)
   3. 3 Premium non-hero stories
   4. Premium call-to-action
 
