@@ -50,7 +50,7 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
 .news-card .eyebrow{font-size:14px;margin-top:6px}
 .news-card h3{font-size:16px;line-height:1.15;margin:3px 0 0}
 .latest-divider{display:none}
-.subscriber-story,.brandspot-story,.mobile-standard{display:none}
+.subscriber-story,.brandspot-story{display:none}
 .ad-slot{display:none;width:300px;max-width:100%;margin:18px auto 0}
 .ad-slot span{display:block;text-align:center;color:var(--muted);font-weight:400;font-size:10px;line-height:normal;margin-bottom:5px}
 .ad-slot img{width:300px;height:250px}
@@ -135,7 +135,6 @@ body:not(.is-dh) .mode-toolbar,body.is-subscriber-view .mode-toolbar{display:non
    .premium-feature h2{padding:0 12px;margin:4px 0;color:#fff}
    .premium-feature p{padding:0 12px;color:#f1e8e6}
    .premium-feature .story-meta{padding:0 12px 12px;color:#eee}
-   .premium-list .desktop-premium-story:last-child{display:none}
    .premium-list .compact-story{grid-template-columns:minmax(0,42%) minmax(0,1fr)}
    .premium-list .compact-story>img{width:100%;height:auto;aspect-ratio:1.5}
    .premium-list .compact-story h3{font-size:16px;line-height:1.15}
@@ -206,7 +205,6 @@ body:not(.is-dh) .pv-root{display:block}
 .pv-ad img{width:300px;max-width:100%;height:250px;display:block;margin:0 auto}
 /* Ad toggle: show ad + hide the two extra premium stories only in "with ad" mode */
 body[data-pv-mode="with-ad"] .pv-ad{display:block}
-body[data-pv-mode="with-ad"] .pv-premium-extra{display:none}
 
 /* --- PV hero: DH-style dark overlay, 3:2 imagery --- */
 .pv-hero{position:relative;display:flex;flex-direction:column;background:#090909;color:#fff;overflow:hidden;border-radius:4px}
@@ -286,7 +284,7 @@ body[data-pv-mode="with-ad"] .pv-premium-extra{display:none}
   .pv-middle-panel,.pv-middle-stories{gap:10px}
   .pv-subhashita{padding:10px;gap:10px}
   .pv-avatar-ring{width:64px;height:64px}
-  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+4),body[data-pv-mode="ad-lite"] .pv-premium-row:nth-of-type(n+6){display:none}
+  body[data-pv-mode="with-ad"] .pv-premium-row:nth-of-type(n+4){display:none}
   .pv-middle-panel{flex:1}
   .pv-middle-stories{flex:1;justify-content:flex-start}
   .pv-middle-stories>article,.pv-premium-body>article{flex:1 0 auto}
